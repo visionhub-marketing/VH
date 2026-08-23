@@ -12,7 +12,7 @@
     <link rel="icon" href="logo.png" type="image/png">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -21,504 +21,713 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     >
 
-    <style>
 
-        /* =========================
-           RESET
-        ========================== */
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* ==================================================
+   GLOBAL
+================================================== */
 
-        html {
-            width: 100%;
-            min-height: 100%;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            width: 100%;
-            min-height: 100vh;
+html{
+    scroll-behavior:smooth;
+}
 
-            background: #5A4EA1;
-            color: #ffffff;
+body{
 
-            font-family: 'Poppins', sans-serif;
+    background:#5A4EA1;
 
-            overflow-x: hidden;
-        }
+    color:#ffffff;
 
-        a {
-            text-decoration: none;
-        }
+    font-family:'Poppins',sans-serif;
 
+    line-height:1.6;
 
-        /* =========================
-           HEADER
-        ========================== */
+    overflow-x:hidden;
+}
 
-        header {
-            width: 100%;
+a{
+    text-decoration:none;
+}
 
-            min-height: 60px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+/* ==================================================
+   HEADER
+================================================== */
 
-            padding: 8px 20px;
+header{
 
-            background: #4b3f8f;
+    width:100%;
 
-            position: relative;
+    height:72px;
 
-            z-index: 100;
+    display:flex;
 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-        }
+    align-items:center;
 
+    justify-content:space-between;
 
-        /* =========================
-           BRAND
-        ========================== */
+    padding:0 6%;
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
+    background:#4B3F8F;
 
-        .brand img {
-            width: 38px;
-            height: auto;
-            display: block;
-        }
+    border-bottom:1px solid rgba(255,255,255,0.08);
 
-        .name-link {
-            color: #ffffff;
+    position:sticky;
 
-            font-size: 1rem;
+    top:0;
 
-            font-weight: 700;
+    z-index:1000;
 
-            letter-spacing: 1px;
-        }
+    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
 
-        .name-link:hover {
-            color: #A8D08D;
-        }
 
+/* ==================================================
+   BRAND
+================================================== */
 
-        /* =========================
-           NAVIGATION
-        ========================== */
+.brand{
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    display:flex;
 
-        nav a {
-            color: #ffffff;
+    align-items:center;
 
-            font-size: 0.85rem;
+    gap:10px;
+}
 
-            font-weight: 500;
+.brand-logo{
 
-            padding: 7px 10px;
+    width:42px;
 
-            border-radius: 6px;
+    height:42px;
 
-            transition: 0.3s;
-        }
+    object-fit:contain;
 
-        nav a:hover {
-            color: #A8D08D;
-            background: rgba(168, 208, 141, 0.12);
-        }
+    transition:0.3s ease;
+}
 
-        .header-icon {
-            color: #A8D08D;
+.brand:hover .brand-logo{
 
-            font-size: 1rem;
+    transform:rotate(-5deg) scale(1.05);
+}
 
-            margin-left: 5px;
-        }
 
+.brand-name{
 
-        /* =========================
-           ABOUT SECTION
-        ========================== */
+    color:#ffffff;
 
-        .about-section {
+    font-size:1.15rem;
 
-            width: 100%;
+    font-weight:700;
 
-            max-width: 1150px;
+    letter-spacing:1.2px;
+}
 
-            min-height: calc(100vh - 60px);
+.brand-name span{
 
-            margin: 0 auto;
+    color:#A8D08D;
+}
 
-            padding: 70px 25px;
 
-            display: flex;
+/* ==================================================
+   NAVIGATION
+================================================== */
 
-            justify-content: center;
+nav{
 
-            align-items: center;
+    display:flex;
 
-            gap: 50px;
-        }
+    align-items:center;
 
+    gap:8px;
+}
 
-        /* =========================
-           IMAGE
-        ========================== */
+nav a{
 
-        .about-image {
+    position:relative;
 
-            width: 50%;
+    color:rgba(255,255,255,0.85);
 
-            display: flex;
+    font-size:0.86rem;
 
-            justify-content: center;
+    font-weight:500;
 
-            align-items: center;
-        }
+    padding:9px 14px;
 
-        .about-image img {
+    border-radius:8px;
 
-            width: 100%;
+    transition:0.3s ease;
+}
 
-            max-width: 500px;
+nav a:hover{
 
-            height: auto;
+    color:#A8D08D;
 
-            display: block;
+    background:rgba(168,208,141,0.08);
+}
 
-            border-radius: 15px;
 
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.35);
-        }
+/* Active Link */
 
+nav a.active{
 
-        /* =========================
-           CONTENT
-        ========================== */
+    color:#A8D08D;
 
-        .about-text {
+    background:rgba(168,208,141,0.10);
+}
 
-            width: 50%;
+nav a.active::after{
 
-            display: block;
+    content:"";
 
-            visibility: visible;
+    position:absolute;
 
-            opacity: 1;
-        }
+    left:50%;
 
+    bottom:2px;
 
-        .about-text h2 {
+    width:18px;
 
-            color: #ffffff;
+    height:2px;
 
-            font-size: 2rem;
+    background:#A8D08D;
 
-            font-weight: 700;
+    transform:translateX(-50%);
 
-            margin-bottom: 18px;
-        }
+    border-radius:10px;
+}
 
 
-        .about-text > p {
+/* Header Icon */
 
-            color: #ffffff;
+.header-icon{
 
-            font-size: 0.95rem;
+    color:#A8D08D;
 
-            font-weight: 300;
+    font-size:1rem;
 
-            line-height: 1.8;
+    margin-left:8px;
 
-            margin-bottom: 15px;
+    padding-left:12px;
 
-            opacity: 0.95;
-        }
+    border-left:1px solid rgba(255,255,255,0.15);
+}
 
 
-        /* =========================
-           CORE VALUES
-        ========================== */
+/* ==================================================
+   ABOUT HERO
+================================================== */
 
-        .vision-values {
+.about{
 
-            width: 100%;
+    width:100%;
 
-            display: flex;
+    max-width:1200px;
 
-            flex-direction: column;
+    min-height:calc(100vh - 72px);
 
-            gap: 14px;
+    margin:auto;
 
-            margin-top: 22px;
+    padding:80px 6%;
 
-            margin-bottom: 22px;
-        }
+    display:grid;
 
+    grid-template-columns:0.9fr 1.1fr;
 
-        .value-box {
+    align-items:center;
 
-            width: 100%;
+    gap:80px;
+}
 
-            padding: 16px 18px;
 
-            background: rgba(255, 255, 255, 0.08);
+/* ==================================================
+   IMAGE
+================================================== */
 
-            border-left: 4px solid #A8D08D;
+.about-image{
 
-            border-radius: 10px;
+    position:relative;
 
-            display: block;
+    display:flex;
 
-            visibility: visible;
+    justify-content:center;
 
-            opacity: 1;
+    align-items:center;
+}
 
-            transition: 0.3s;
-        }
+.about-image::before{
 
+    content:"";
 
-        .value-box:hover {
+    position:absolute;
 
-            background: rgba(168, 208, 141, 0.15);
+    width:85%;
 
-            transform: translateX(5px);
-        }
+    height:85%;
 
+    border:1px solid rgba(168,208,141,0.35);
 
-        .value-box h3 {
+    border-radius:25px;
 
-            color: #A8D08D;
+    transform:rotate(-5deg);
 
-            font-size: 1.1rem;
+    z-index:0;
+}
 
-            font-weight: 700;
+.about-image img{
 
-            margin-bottom: 6px;
-        }
+    position:relative;
 
+    z-index:1;
 
-        .value-box p {
+    width:100%;
 
-            color: #ffffff;
+    max-width:450px;
 
-            font-size: 0.85rem;
+    display:block;
 
-            font-weight: 300;
+    border-radius:22px;
 
-            line-height: 1.7;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
 
-            margin: 0;
+    transition:0.4s ease;
+}
 
-            opacity: 0.9;
-        }
+.about-image img:hover{
 
+    transform:translateY(-6px);
+}
 
-        /* =========================
-           CLOSING STATEMENT
-        ========================== */
 
-        .about-ending {
+/* ==================================================
+   ABOUT CONTENT
+================================================== */
 
-            color: #ffffff;
+.about-content{
 
-            font-size: 0.95rem;
+    max-width:620px;
+}
 
-            line-height: 1.8;
 
-            margin-top: 20px;
-        }
+/* Small Label */
 
+.section-label{
 
-        .about-ending strong {
+    display:inline-flex;
 
-            color: #A8D08D;
+    align-items:center;
 
-            font-size: 1.15rem;
+    gap:8px;
 
-            font-weight: 700;
+    color:#A8D08D;
 
-            letter-spacing: 0.5px;
-        }
+    font-size:0.78rem;
 
+    font-weight:600;
 
-        /* =========================
-           TABLET
-        ========================== */
+    letter-spacing:2px;
 
-        @media (max-width: 768px) {
+    text-transform:uppercase;
 
-            header {
+    margin-bottom:14px;
+}
 
-                flex-direction: column;
+.section-label::before{
 
-                justify-content: center;
+    content:"";
 
-                gap: 8px;
+    width:25px;
 
-                padding: 10px 15px;
-            }
+    height:2px;
 
+    background:#A8D08D;
+}
 
-            .brand {
 
-                justify-content: center;
-            }
+/* Heading */
 
+.about-content h1{
 
-            nav {
+    font-size:clamp(2.2rem,4vw,3.4rem);
 
-                justify-content: center;
+    line-height:1.15;
 
-                flex-wrap: wrap;
-            }
+    font-weight:700;
 
+    margin-bottom:22px;
+}
 
-            .about-section {
+.about-content h1 span{
 
-                min-height: auto;
+    color:#A8D08D;
+}
 
-                flex-direction: column;
 
-                padding: 45px 20px;
+/* Paragraph */
 
-                gap: 35px;
-            }
+.intro{
 
+    color:rgba(255,255,255,0.82);
 
-            .about-image {
+    font-size:0.96rem;
 
-                width: 100%;
-            }
+    line-height:1.9;
 
+    margin-bottom:14px;
+}
 
-            .about-text {
 
-                width: 100%;
+/* ==================================================
+   CORE VALUES
+================================================== */
 
-                text-align: center;
-            }
+.values-title{
 
+    font-size:0.9rem;
 
-            .about-image img {
+    font-weight:600;
 
-                max-width: 450px;
-            }
+    margin-top:28px;
 
+    margin-bottom:15px;
 
-            .about-text h2 {
+    color:#ffffff;
+}
 
-                font-size: 1.7rem;
-            }
 
+.values{
 
-            .value-box {
+    display:grid;
 
-                text-align: left;
-            }
+    grid-template-columns:repeat(3,1fr);
 
+    gap:12px;
+}
 
-            .about-ending {
 
-                text-align: center;
-            }
+/* Value Card */
 
-        }
+.value{
 
+    position:relative;
 
-        /* =========================
-           MOBILE
-        ========================== */
+    min-height:185px;
 
-        @media (max-width: 480px) {
+    padding:20px 16px;
 
-            header {
+    background:rgba(255,255,255,0.07);
 
-                padding: 10px;
-            }
+    border:1px solid rgba(255,255,255,0.08);
 
+    border-radius:14px;
 
-            .brand img {
+    overflow:hidden;
 
-                width: 32px;
-            }
+    transition:0.35s ease;
+}
 
+.value:hover{
 
-            .name-link {
+    transform:translateY(-6px);
 
-                font-size: 0.9rem;
-            }
+    background:rgba(255,255,255,0.11);
 
+    border-color:rgba(168,208,141,0.35);
 
-            nav {
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.18);
+}
 
-                gap: 3px;
-            }
 
+/* Number */
 
-            nav a {
+.value-number{
 
-                font-size: 0.75rem;
+    position:absolute;
 
-                padding: 5px 6px;
-            }
+    top:8px;
 
+    right:12px;
 
-            .about-section {
+    color:rgba(168,208,141,0.16);
 
-                padding: 35px 15px;
-            }
+    font-size:2.8rem;
 
+    font-weight:700;
 
-            .about-text h2 {
+    line-height:1;
+}
 
-                font-size: 1.5rem;
-            }
 
+/* Icon */
 
-            .about-text > p {
+.value-icon{
 
-                font-size: 0.85rem;
+    width:38px;
 
-                line-height: 1.7;
-            }
+    height:38px;
 
+    display:flex;
 
-            .value-box {
+    align-items:center;
 
-                padding: 14px;
-            }
+    justify-content:center;
 
+    background:rgba(168,208,141,0.12);
 
-            .value-box h3 {
+    color:#A8D08D;
 
-                font-size: 1rem;
-            }
+    border-radius:9px;
 
+    margin-bottom:14px;
 
-            .value-box p {
+    font-size:0.95rem;
+}
 
-                font-size: 0.8rem;
-            }
 
-        }
+/* Title */
 
-    </style>
+.value h3{
+
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+
+/* Description */
+
+.value p{
+
+    color:rgba(255,255,255,0.72);
+
+    font-size:0.75rem;
+
+    line-height:1.7;
+}
+
+
+/* ==================================================
+   CLOSING
+================================================== */
+
+.closing{
+
+    margin-top:24px;
+
+    padding-left:15px;
+
+    border-left:2px solid #A8D08D;
+
+    color:rgba(255,255,255,0.75);
+
+    font-size:0.82rem;
+
+    line-height:1.7;
+}
+
+.closing strong{
+
+    color:#ffffff;
+
+    font-weight:600;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:950px){
+
+    header{
+
+        padding:0 4%;
+    }
+
+    .about{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        padding:70px 6%;
+    }
+
+    .about-image{
+
+        order:1;
+    }
+
+    .about-content{
+
+        order:2;
+
+        max-width:750px;
+
+        margin:auto;
+    }
+
+    .about-content h1{
+
+        text-align:center;
+    }
+
+    .section-label{
+
+        display:flex;
+
+        justify-content:center;
+    }
+
+    .intro{
+
+        text-align:center;
+    }
+
+    .values-title{
+
+        text-align:center;
+    }
+
+    .closing{
+
+        text-align:left;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:650px){
+
+    header{
+
+        height:auto;
+
+        min-height:70px;
+
+        flex-direction:column;
+
+        gap:8px;
+
+        padding:12px 15px;
+    }
+
+    nav{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:2px;
+    }
+
+    nav a{
+
+        font-size:0.72rem;
+
+        padding:6px 7px;
+    }
+
+    .header-icon{
+
+        display:none;
+    }
+
+    .about{
+
+        padding:50px 18px;
+
+        gap:40px;
+    }
+
+    .about-image img{
+
+        max-width:380px;
+    }
+
+    .about-image::before{
+
+        width:90%;
+
+        height:90%;
+    }
+
+    .about-content h1{
+
+        font-size:2.1rem;
+    }
+
+    .intro{
+
+        font-size:0.86rem;
+
+        line-height:1.8;
+    }
+
+    .values{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+    .value{
+
+        min-height:auto;
+
+        padding:18px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media(max-width:400px){
+
+    .brand-name{
+
+        font-size:1rem;
+    }
+
+    .brand-logo{
+
+        width:36px;
+    }
+
+    .about-content h1{
+
+        font-size:1.85rem;
+    }
+
+    .section-label{
+
+        font-size:0.7rem;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -526,208 +735,250 @@
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<!-- ==================================================
+     HEADER
+================================================== -->
 
-    <header>
+<header>
 
-        <div class="brand">
+    <div class="brand">
 
-            <a href="index.html">
+        <a href="index.html">
 
-                <img
-                    src="logo.png"
-                    alt="Vision Hub Logo"
-                >
-
-            </a>
-
-            <a
-                href="index.html"
-                class="name-link"
+            <img
+                src="logo.png"
+                alt="Vision Hub Logo"
+                class="brand-logo"
             >
-                Vision Hub
-            </a>
+
+        </a>
+
+        <a
+            href="index.html"
+            class="brand-name"
+        >
+            Vision <span>Hub</span>
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a
+            href="about.html"
+            class="active"
+        >
+            About Us
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <i class="fa-solid fa-eye header-icon"></i>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==================================================
+     ABOUT SECTION
+================================================== -->
+
+<main>
+
+<section class="about">
+
+
+    <!-- IMAGE -->
+
+    <div class="about-image">
+
+        <img
+            src="team.jpg"
+            alt="Vision Hub Team"
+        >
+
+    </div>
+
+
+
+    <!-- CONTENT -->
+
+    <div class="about-content">
+
+
+        <div class="section-label">
+            WHO WE ARE
+        </div>
+
+
+        <h1>
+
+            We Build Brands
+            <span>With Purpose.</span>
+
+        </h1>
+
+
+        <p class="intro">
+
+            Vision Hub is a creative marketing agency built to
+            help businesses and brands grow, connect with their
+            audience, and stand out in a competitive market.
+
+        </p>
+
+
+        <p class="intro">
+
+            We believe marketing is more than advertising,
+            content, or numbers. It starts with understanding
+            the business, defining a clear direction, building
+            a strong identity, and creating meaningful results.
+
+        </p>
+
+
+
+        <div class="values-title">
+
+            Everything we do is built around three principles:
 
         </div>
 
 
-        <nav>
 
-            <a href="index.html">
-                Home
-            </a>
+        <!-- VALUES -->
 
-            <a href="about.html">
-                About Us
-            </a>
+        <div class="values">
 
-            <a href="services.html">
-                Services
-            </a>
 
-            <a href="contact.html">
-                Contact
-            </a>
+            <!-- VISION -->
 
-            <i class="fa-solid fa-eye header-icon"></i>
+            <div class="value">
 
-        </nav>
+                <span class="value-number">
+                    01
+                </span>
 
-    </header>
+                <div class="value-icon">
 
-
-
-    <!-- =========================
-         ABOUT US
-    ========================== -->
-
-    <main>
-
-        <section class="about-section">
-
-
-            <!-- IMAGE -->
-
-            <div class="about-image">
-
-                <img
-                    src="team.jpg"
-                    alt="Vision Hub Team"
-                >
-
-            </div>
-
-
-
-            <!-- CONTENT -->
-
-            <div class="about-text">
-
-
-                <h2>
-                    About Vision Hub
-                </h2>
-
-
-                <p>
-
-                    Vision Hub is a creative marketing agency
-                    built to help businesses and brands grow,
-                    connect, and stand out in a competitive market.
-
-                </p>
-
-
-                <p>
-
-                    We believe that marketing is more than
-                    advertising, content, or numbers. It is about
-                    understanding a business, creating a clear
-                    direction, building a strong identity, and
-                    creating meaningful results.
-
-                </p>
-
-
-                <p>
-
-                    Everything we do at Vision Hub is built around
-                    three core principles:
-
-                </p>
-
-
-
-                <!-- VISION -->
-
-                <div class="vision-values">
-
-
-                    <div class="value-box">
-
-                        <h3>
-                            01. Vision
-                        </h3>
-
-                        <p>
-
-                            We help businesses define their direction,
-                            understand where they want to go, and build
-                            a clear vision for sustainable growth.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- IDENTITY -->
-
-                    <div class="value-box">
-
-                        <h3>
-                            02. Identity
-                        </h3>
-
-                        <p>
-
-                            We build distinctive brand identities that
-                            communicate who a business is, what it
-                            represents, and what makes it different.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- IMPACT -->
-
-                    <div class="value-box">
-
-                        <h3>
-                            03. Impact
-                        </h3>
-
-                        <p>
-
-                            We turn strategy and creativity into
-                            meaningful marketing that creates real
-                            value for businesses and their audiences.
-
-                        </p>
-
-                    </div>
-
+                    <i class="fa-solid fa-eye"></i>
 
                 </div>
 
+                <h3>
+                    Vision
+                </h3>
 
+                <p>
 
-                <!-- CLOSING -->
-
-                <p class="about-ending">
-
-                    <strong>
-                        Vision. Identity. Impact.
-                    </strong>
-
-                    <br>
-
-                    These are more than three words.
-                    They are the foundation behind everything
-                    we create at Vision Hub.
+                    We help businesses define their direction,
+                    understand their goals, and build a clear
+                    path toward sustainable growth.
 
                 </p>
 
+            </div>
+
+
+
+            <!-- IDENTITY -->
+
+            <div class="value">
+
+                <span class="value-number">
+                    02
+                </span>
+
+                <div class="value-icon">
+
+                    <i class="fa-solid fa-fingerprint"></i>
+
+                </div>
+
+                <h3>
+                    Identity
+                </h3>
+
+                <p>
+
+                    We build distinctive identities that
+                    communicate who a brand is and what makes
+                    it different from the competition.
+
+                </p>
 
             </div>
 
-        </section>
 
-    </main>
+
+            <!-- IMPACT -->
+
+            <div class="value">
+
+                <span class="value-number">
+                    03
+                </span>
+
+                <div class="value-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+                <h3>
+                    Impact
+                </h3>
+
+                <p>
+
+                    We turn strategy and creativity into
+                    meaningful marketing that creates real
+                    value for businesses and their audiences.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CLOSING -->
+
+        <div class="closing">
+
+            <strong>
+                Vision. Identity. Impact.
+            </strong>
+
+            <br>
+
+            More than three words — they are the foundation
+            behind everything we create at Vision Hub.
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
 
 
 </body>
