@@ -38,11 +38,25 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+
     background:#5A4EA1;
+
     color:#fff;
+
     line-height:1.6;
+
     overflow-x:hidden;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
 }
 
 a{
@@ -52,12 +66,14 @@ a{
 
 /* =========================================================
    HEADER
-   SAME AS HOME
 ========================================================= */
 
 header{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:5px 15px;
@@ -65,7 +81,9 @@ header{
     background:#4b3f8f;
 
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     box-shadow:0 2px 6px rgba(0,0,0,0.2);
@@ -74,9 +92,6 @@ header{
 
     flex-wrap:wrap;
 }
-
-
-/* Header Shrink */
 
 header.shrink{
     padding:3px 10px;
@@ -88,13 +103,18 @@ header.shrink{
 ========================================================= */
 
 .brand{
+
     display:flex;
+
     align-items:center;
+
     gap:5px;
 }
 
 .brand img{
+
     width:35px;
+
     transition:0.3s ease;
 }
 
@@ -103,10 +123,15 @@ header.shrink .brand img{
 }
 
 .brand a.name-link{
+
     color:#fff;
+
     font-size:1rem;
+
     font-weight:700;
+
     letter-spacing:1px;
+
     transition:0.3s;
 }
 
@@ -124,16 +149,24 @@ header.shrink .brand a.name-link{
 ========================================================= */
 
 nav{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     flex-wrap:wrap;
+
     margin-top:5px;
 }
 
 nav a{
+
     color:#fff;
+
     font-weight:500;
+
     position:relative;
 
     padding:4px 8px;
@@ -145,31 +178,31 @@ nav a{
     transition:all 0.3s ease;
 }
 
-
-/* Underline */
-
 nav a::after{
+
     content:"";
 
     position:absolute;
 
     width:0;
+
     height:2px;
 
     background:#A8D08D;
 
     left:0;
+
     bottom:-4px;
 
     transition:0.3s;
 }
 
-
-/* Hover */
-
 nav a:hover{
+
     background:rgba(168,208,141,0.15);
+
     color:#A8D08D;
+
     transform:scale(1.05);
 }
 
@@ -181,6 +214,7 @@ nav a:hover::after{
 /* Active Page */
 
 nav a.active{
+
     color:#A8D08D;
 }
 
@@ -194,14 +228,20 @@ nav a.active::after{
 ========================================================= */
 
 .header-icon{
+
     color:#A8D08D;
+
     font-size:1rem;
+
     margin-left:5px;
+
     transition:all 0.3s ease;
 }
 
 .header-icon:hover{
+
     color:#fff;
+
     transform:scale(1.2) rotate(15deg);
 }
 
@@ -213,6 +253,7 @@ nav a.active::after{
 .about-section{
 
     width:100%;
+
     max-width:1150px;
 
     min-height:calc(100vh - 60px);
@@ -224,9 +265,12 @@ nav a.active::after{
     display:flex;
 
     justify-content:center;
+
     align-items:center;
 
     gap:45px;
+
+    flex:1;
 }
 
 
@@ -241,6 +285,7 @@ nav a.active::after{
     display:flex;
 
     justify-content:center;
+
     align-items:center;
 }
 
@@ -392,7 +437,7 @@ nav a.active::after{
 }
 
 
-/* Card Hover */
+/* Hover */
 
 .value:hover{
 
@@ -429,11 +474,13 @@ nav a.active::after{
 .value-icon{
 
     width:38px;
+
     height:38px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:8px;
@@ -502,6 +549,81 @@ nav a.active::after{
 
 
 /* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#3c3273;
+
+    text-align:center;
+
+    padding:20px 10px;
+
+    font-size:0.8rem;
+
+    margin-top:auto;
+}
+
+.footer-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.footer-content p{
+
+    color:rgba(255,255,255,0.85);
+
+    margin:0;
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.social-icons a{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(168,208,141,0.1);
+
+    color:#A8D08D;
+
+    font-size:0.95rem;
+
+    transition:all 0.3s ease;
+}
+
+.social-icons a:hover{
+
+    background:#A8D08D;
+
+    color:#3c3273;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -518,7 +640,6 @@ nav a.active::after{
         min-height:auto;
     }
 
-
     .about-image,
     .about-text{
 
@@ -527,12 +648,10 @@ nav a.active::after{
         width:100%;
     }
 
-
     .about-image img{
 
         max-width:450px;
     }
-
 
     .about-text{
 
@@ -541,12 +660,10 @@ nav a.active::after{
         max-width:750px;
     }
 
-
     .values{
 
         text-align:left;
     }
-
 
     .closing{
 
@@ -558,8 +675,6 @@ nav a.active::after{
 
 /* =========================================================
    MOBILE
-   BRAND TOP LEFT
-   NAV BELOW BRAND - LEFT
 ========================================================= */
 
 @media (max-width:480px){
@@ -599,12 +714,10 @@ nav a.active::after{
         gap:5px;
     }
 
-
     .brand img{
 
         width:35px;
     }
-
 
     .brand a.name-link{
 
@@ -614,7 +727,7 @@ nav a.active::after{
     }
 
 
-    /* Navigation Below */
+    /* Navigation */
 
     nav{
 
@@ -633,14 +746,12 @@ nav a.active::after{
         margin-top:2px;
     }
 
-
     nav a{
 
         font-size:0.75rem;
 
         padding:4px 6px;
     }
-
 
     .header-icon{
 
@@ -659,12 +770,10 @@ nav a.active::after{
         gap:30px;
     }
 
-
     .about-text h1{
 
         font-size:1.9rem;
     }
-
 
     .about-text .intro{
 
@@ -674,13 +783,14 @@ nav a.active::after{
     }
 
 
+    /* Values */
+
     .values{
 
         flex-direction:column;
 
         gap:10px;
     }
-
 
     .value{
 
@@ -689,16 +799,38 @@ nav a.active::after{
         padding:16px;
     }
 
-
     .value p{
 
         font-size:0.78rem;
     }
 
-
     .closing{
 
         font-size:0.78rem;
+    }
+
+
+    /* Footer */
+
+    footer{
+
+        padding:18px 10px;
+
+        font-size:0.72rem;
+    }
+
+    .social-icons{
+
+        gap:10px;
+    }
+
+    .social-icons a{
+
+        width:32px;
+
+        height:32px;
+
+        font-size:0.85rem;
     }
 
 }
@@ -715,18 +847,15 @@ nav a.active::after{
         width:32px;
     }
 
-
     .brand a.name-link{
 
         font-size:0.9rem;
     }
 
-
     nav{
 
         gap:2px;
     }
-
 
     nav a{
 
@@ -735,12 +864,10 @@ nav a.active::after{
         padding:3px 5px;
     }
 
-
     .header-icon{
 
         font-size:0.75rem;
     }
-
 
     .about-text h1{
 
@@ -766,7 +893,6 @@ nav a.active::after{
 
     <div class="brand">
 
-
         <a
             href="index.html"
             class="logo-link"
@@ -789,17 +915,14 @@ nav a.active::after{
 
         </a>
 
-
     </div>
 
 
     <nav>
 
-
         <a href="index.html">
             Home
         </a>
-
 
         <a
             href="about.html"
@@ -808,22 +931,17 @@ nav a.active::after{
             About Us
         </a>
 
-
         <a href="services.html">
             Services
         </a>
-
 
         <a href="contact.html">
             Contact
         </a>
 
-
         <i class="fa-solid fa-eye header-icon"></i>
 
-
     </nav>
-
 
 </header>
 
@@ -895,9 +1013,8 @@ nav a.active::after{
 
 
         <!-- =================================================
-             VALUE CARDS
+             THREE CORE VALUES
         ================================================= -->
-
 
         <div class="values">
 
@@ -905,7 +1022,6 @@ nav a.active::after{
             <!-- VISION -->
 
             <div class="value">
-
 
                 <span class="value-number">
                     01
@@ -932,7 +1048,6 @@ nav a.active::after{
 
                 </p>
 
-
             </div>
 
 
@@ -940,7 +1055,6 @@ nav a.active::after{
             <!-- IDENTITY -->
 
             <div class="value">
-
 
                 <span class="value-number">
                     02
@@ -967,7 +1081,6 @@ nav a.active::after{
 
                 </p>
 
-
             </div>
 
 
@@ -975,7 +1088,6 @@ nav a.active::after{
             <!-- IMPACT -->
 
             <div class="value">
-
 
                 <span class="value-number">
                     03
@@ -1002,7 +1114,6 @@ nav a.active::after{
 
                 </p>
 
-
             </div>
 
 
@@ -1010,25 +1121,18 @@ nav a.active::after{
 
 
 
-        <!-- =================================================
-             CLOSING
-        ================================================= -->
-
+        <!-- CLOSING -->
 
         <div class="closing">
-
 
             <strong>
                 Vision. Identity. Impact.
             </strong>
 
-
             <br>
-
 
             More than three words — they are the foundation
             behind everything we create at Vision Hub.
-
 
         </div>
 
@@ -1041,7 +1145,91 @@ nav a.active::after{
 
 
 <!-- =========================================================
-     HEADER SHRINK
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <p>
+            © 2026 Vision Hub Marketing Agency
+        </p>
+
+
+        <div class="social-icons">
+
+
+            <!-- Facebook -->
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61580311856103"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+
+                <i class="fab fa-facebook-f"></i>
+
+            </a>
+
+
+
+            <!-- Instagram -->
+
+            <a
+                href="https://www.instagram.com/vision.hub__marketing.agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://www.linkedin.com/company/vision-hub-marketing-agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+
+                <i class="fab fa-linkedin-in"></i>
+
+            </a>
+
+
+
+            <!-- Linktree -->
+
+            <a
+                href="https://linktr.ee/vision_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linktree"
+            >
+
+                <i class="fas fa-link"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     HEADER SCRIPT
 ========================================================= -->
 
 <script>
