@@ -57,6 +57,7 @@ a{
 
 /* ==================================================
    HEADER
+   SAME STYLE AS HOME
 ================================================== */
 
 header{
@@ -85,7 +86,7 @@ header{
 }
 
 
-/* Header Shrink */
+/* Shrink Header */
 
 header.shrink{
     padding:3px 10px;
@@ -606,7 +607,9 @@ nav a.active::after{
 
 
 /* ==================================================
-   MOBILE HEADER
+   MOBILE
+   LOGO + NAME TOP LEFT
+   NAV UNDER THEM LEFT
 ================================================== */
 
 @media (max-width:480px){
@@ -617,21 +620,21 @@ nav a.active::after{
 
         display:flex;
 
-        flex-direction:row;
+        flex-direction:column;
 
-        justify-content:space-between;
+        align-items:flex-start;
 
-        align-items:center;
+        justify-content:flex-start;
 
         flex-wrap:nowrap;
 
         padding:6px 10px;
 
-        gap:5px;
+        gap:3px;
     }
 
 
-    /* Logo + Name LEFT */
+    /* Logo + Name */
 
     .brand{
 
@@ -642,8 +645,6 @@ nav a.active::after{
         align-items:center;
 
         justify-content:flex-start;
-
-        flex-shrink:0;
 
         gap:4px;
     }
@@ -661,32 +662,30 @@ nav a.active::after{
     }
 
 
-    /* Navigation RIGHT */
+    /* Navigation */
 
     nav{
 
-        width:auto;
+        width:100%;
 
         display:flex;
 
         align-items:center;
 
-        justify-content:flex-end;
+        justify-content:flex-start;
 
-        flex-wrap:nowrap;
+        flex-wrap:wrap;
 
         gap:2px;
 
         margin-top:0;
-
-        flex-shrink:1;
     }
 
     nav a{
 
         font-size:0.68rem;
 
-        padding:4px 5px;
+        padding:4px 6px;
 
         white-space:nowrap;
     }
@@ -737,7 +736,6 @@ nav a.active::after{
         min-height:auto;
 
         padding:16px;
-
     }
 
     .value p{
@@ -807,6 +805,9 @@ nav a.active::after{
 
 <header id="mainHeader">
 
+
+    <!-- BRAND -->
+
     <div class="brand">
 
         <a
@@ -832,6 +833,8 @@ nav a.active::after{
     </div>
 
 
+    <!-- NAVIGATION -->
+
     <nav>
 
         <a href="index.html">
@@ -856,6 +859,7 @@ nav a.active::after{
         <i class="fa-solid fa-eye header-icon"></i>
 
     </nav>
+
 
 </header>
 
