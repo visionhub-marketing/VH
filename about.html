@@ -57,7 +57,6 @@ a{
 
 /* ==================================================
    HEADER
-   SAME STYLE AS HOME
 ================================================== */
 
 header{
@@ -109,6 +108,10 @@ header.shrink{
 .brand img{
 
     width:35px;
+
+    height:auto;
+
+    display:block;
 
     transition:0.3s ease;
 }
@@ -334,7 +337,7 @@ nav a.active::after{
 }
 
 
-/* Small Label */
+/* Label */
 
 .about-label{
 
@@ -354,7 +357,7 @@ nav a.active::after{
 }
 
 
-/* Main Heading */
+/* Heading */
 
 .about-text h1{
 
@@ -441,7 +444,7 @@ nav a.active::after{
 }
 
 
-/* Card Hover */
+/* Hover */
 
 .value:hover{
 
@@ -499,7 +502,7 @@ nav a.active::after{
 }
 
 
-/* Card Title */
+/* Title */
 
 .value h3{
 
@@ -513,7 +516,7 @@ nav a.active::after{
 }
 
 
-/* Card Description */
+/* Description */
 
 .value p{
 
@@ -603,30 +606,101 @@ nav a.active::after{
 
 
 /* ==================================================
-   MOBILE
+   MOBILE HEADER
 ================================================== */
 
 @media (max-width:480px){
 
     header{
 
-        justify-content:center;
+        width:100%;
+
+        display:flex;
+
+        flex-direction:row;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        flex-wrap:nowrap;
+
+        padding:6px 10px;
 
         gap:5px;
     }
 
+
+    /* Logo + Name LEFT */
+
     .brand{
 
-        width:100%;
+        width:auto;
 
-        justify-content:center;
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        flex-shrink:0;
+
+        gap:4px;
     }
+
+    .brand img{
+
+        width:32px;
+    }
+
+    .brand a.name-link{
+
+        font-size:0.9rem;
+
+        letter-spacing:0.5px;
+    }
+
+
+    /* Navigation RIGHT */
 
     nav{
 
-        justify-content:center;
+        width:auto;
 
-        width:100%;
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-end;
+
+        flex-wrap:nowrap;
+
+        gap:2px;
+
+        margin-top:0;
+
+        flex-shrink:1;
+    }
+
+    nav a{
+
+        font-size:0.68rem;
+
+        padding:4px 5px;
+
+        white-space:nowrap;
+    }
+
+    nav a::after{
+
+        bottom:-2px;
+    }
+
+    .header-icon{
+
+        font-size:0.8rem;
+
+        margin-left:2px;
     }
 
 
@@ -663,6 +737,7 @@ nav a.active::after{
         min-height:auto;
 
         padding:16px;
+
     }
 
     .value p{
@@ -684,11 +759,31 @@ nav a.active::after{
 
 @media (max-width:350px){
 
+    .brand img{
+
+        width:29px;
+    }
+
+    .brand a.name-link{
+
+        font-size:0.82rem;
+    }
+
+    nav{
+
+        gap:0;
+    }
+
     nav a{
 
-        font-size:0.72rem;
+        font-size:0.62rem;
 
-        padding:4px 6px;
+        padding:3px 4px;
+    }
+
+    .header-icon{
+
+        font-size:0.7rem;
     }
 
     .about-text h1{
@@ -731,9 +826,7 @@ nav a.active::after{
             href="index.html"
             class="name-link"
         >
-
             Vision Hub
-
         </a>
 
     </div>
@@ -769,7 +862,7 @@ nav a.active::after{
 
 
 <!-- ==================================================
-     ABOUT
+     ABOUT SECTION
 ================================================== -->
 
 <section class="about-section">
@@ -976,7 +1069,9 @@ window.addEventListener("scroll", function(){
 
         header.classList.add("shrink");
 
-    }else{
+    }
+
+    else{
 
         header.classList.remove("shrink");
 
