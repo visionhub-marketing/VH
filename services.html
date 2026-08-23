@@ -1,146 +1,1375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Vision Hub | Services</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="logo.png" type="image/png" sizes="16x16">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-/* نفس CSS من index.html */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#5A4EA1;color:#fff;animation:fadeIn 1s ease-in-out;line-height:1.6;}
-a{text-decoration:none;}
-header{display:flex;justify-content:space-between;align-items:center;padding:5px 15px;background:#4b3f8f;position:sticky;top:0;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.2);transition:all 0.3s ease;flex-wrap:wrap;}
-header.shrink{padding:3px 10px;}
-.brand{display:flex;align-items:center;gap:5px;}
-.brand img{width:35px;transition:0.3s ease;}
-header.shrink .brand img{width:30px;}
-.brand a.name-link{color:#fff;font-size:1rem;font-weight:700;letter-spacing:1px;transition:0.3s;}
-header.shrink .brand a.name-link{font-size:0.9rem;}
-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px;}
-nav a{color:#fff;font-weight:500;position:relative;padding:4px 8px;border-radius:6px;font-size:0.85rem;transition:all 0.3s ease;}
-nav a::after{content:"";position:absolute;width:0;height:2px;background:#A8D08D;left:0;bottom:-4px;transition:0.3s;}
-nav a:hover{background: rgba(168,208,141,0.15); color:#A8D08D; transform:scale(1.05);}
-nav a:hover::after{width:100%;}
-.header-icon{color:#A8D08D;font-size:1rem;margin-left:5px;transition:all 0.3s ease;}
-.header-icon:hover{color:#fff;transform:scale(1.2) rotate(15deg);}
-section{padding:50px 15px;text-align:center;}
-h2{font-size:1.8rem;margin-bottom:35px;}
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
-.card{background:#4b3f8f;padding:20px;border-radius:15px;width:200px;transition:0.4s ease;cursor:pointer;}
-.card:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(168,208,141,0.5);}
-.card i{font-size:1.8rem;margin-bottom:10px;color:#A8D08D;transition:0.3s;}
-.card:hover i{transform:rotate(15deg) scale(1.2);}
-.card h3{font-size:1.1rem;margin-bottom:8px;}
-.card p{font-size:0.85rem;opacity:0.9;line-height:1.3;}
-.fadeOnScroll{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
-.fadeOnScroll.visible{opacity:1;transform:translateY(0);}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes fadeSlide{0%{opacity:0; transform:translateY(20px);}100%{opacity:1; transform:translateY(0);} }
-@keyframes buttonPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
 
-/* Eye Game */
-.eye-container {position: fixed; top: 20px; right: 20px; width: 60px; height: 60px; cursor: pointer; z-index: 10000;}
-.eye {width: 100%; height: 100%; background: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 8px rgba(0,0,0,0.4); transition: transform 0.2s, box-shadow 0.2s;}
-.pupil {width: 20px; height: 20px; background: #000; border-radius: 50%; position: relative; transition: all 0.1s;}
-@keyframes blink {0%, 20%, 100% {transform: scaleY(1);} 10% {transform: scaleY(0.1);}}
+<head>
+
+<meta charset="UTF-8">
+
+<title>Vision Hub | Services</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link
+    rel="icon"
+    href="logo.png"
+    type="image/png"
+    sizes="16x16"
+>
+
+<!-- Google Font -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#5A4EA1;
+    color:#fff;
+    animation:fadeIn 1s ease-in-out;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+   SAME AS HOME
+========================================================= */
+
+header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:5px 15px;
+
+    background:#4b3f8f;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+
+    transition:all 0.3s ease;
+
+    flex-wrap:wrap;
+}
+
+
+/* Header Shrink */
+
+header.shrink{
+    padding:3px 10px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+.brand img{
+    width:35px;
+
+    transition:0.3s ease;
+}
+
+header.shrink .brand img{
+    width:30px;
+}
+
+.brand a.name-link{
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:0.3s;
+}
+
+header.shrink .brand a.name-link{
+    font-size:0.9rem;
+}
+
+.brand a.name-link:hover{
+    opacity:0.85;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:5px;
+}
+
+nav a{
+    color:#fff;
+
+    font-weight:500;
+
+    position:relative;
+
+    padding:4px 8px;
+
+    border-radius:6px;
+
+    font-size:0.85rem;
+
+    transition:all 0.3s ease;
+}
+
+
+/* Underline */
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#A8D08D;
+
+    left:0;
+
+    bottom:-4px;
+
+    transition:0.3s;
+}
+
+
+/* Hover */
+
+nav a:hover{
+    background:rgba(168,208,141,0.15);
+
+    color:#A8D08D;
+
+    transform:scale(1.05);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+/* Active Page */
+
+nav a.active{
+    color:#A8D08D;
+}
+
+nav a.active::after{
+    width:100%;
+}
+
+
+/* Header Eye Icon */
+
+.header-icon{
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    margin-left:5px;
+
+    transition:all 0.3s ease;
+}
+
+.header-icon:hover{
+    color:#fff;
+
+    transform:scale(1.2) rotate(15deg);
+}
+
+
+/* =========================================================
+   SERVICES HERO
+========================================================= */
+
+.services-hero{
+
+    text-align:center;
+
+    padding:65px 20px 40px;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.services-label{
+
+    display:inline-block;
+
+    color:#A8D08D;
+
+    font-size:0.75rem;
+
+    font-weight:500;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.services-hero h1{
+
+    font-size:2.4rem;
+
+    line-height:1.2;
+
+    margin-bottom:15px;
+}
+
+.services-hero h1 span{
+
+    color:#A8D08D;
+}
+
+.services-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,0.82);
+
+    font-size:0.92rem;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section{
+
+    padding:25px 20px 65px;
+
+    max-width:1150px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:18px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.card{
+
+    background:#4b3f8f;
+
+    padding:25px 22px;
+
+    border-radius:15px;
+
+    min-height:245px;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    transition:all 0.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* Top Line */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:3px;
+
+    background:#A8D08D;
+
+    transition:0.4s ease;
+}
+
+
+/* Hover */
+
+.card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover::before{
+
+    width:100%;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.card-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(168,208,141,0.12);
+
+    color:#A8D08D;
+
+    font-size:1.2rem;
+
+    margin-bottom:18px;
+
+    transition:all 0.3s ease;
+}
+
+.card:hover .card-icon{
+
+    background:#A8D08D;
+
+    color:#4b3f8f;
+
+    transform:scale(1.08);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card h3{
+
+    font-size:1.05rem;
+
+    margin-bottom:10px;
+
+    color:#fff;
+}
+
+.card p{
+
+    font-size:0.78rem;
+
+    line-height:1.75;
+
+    color:rgba(255,255,255,0.72);
+
+    margin-bottom:15px;
+}
+
+
+/* Service Tag */
+
+.service-tag{
+
+    display:inline-block;
+
+    font-size:0.65rem;
+
+    color:#A8D08D;
+
+    background:rgba(168,208,141,0.08);
+
+    padding:4px 8px;
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.services-bottom{
+
+    text-align:center;
+
+    padding:20px 15px 55px;
+}
+
+.services-bottom p{
+
+    font-size:0.9rem;
+
+    color:rgba(255,255,255,0.75);
+}
+
+.services-bottom strong{
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section{
+
+    max-width:1050px;
+
+    margin:0 auto 50px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    background:#8E7CC3;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.18);
+}
+
+.cta-section h2{
+
+    font-size:1.5rem;
+
+    margin-bottom:10px;
+}
+
+.cta-section p{
+
+    font-size:0.82rem;
+
+    color:rgba(255,255,255,0.8);
+
+    margin-bottom:18px;
+}
+
+
+/* CTA Button */
+
+.btn{
+
+    display:inline-block;
+
+    background:#A8D08D;
+
+    color:#2e2e2e;
+
+    padding:9px 20px;
+
+    border-radius:30px;
+
+    font-size:0.8rem;
+
+    font-weight:700;
+
+    transition:0.3s ease;
+}
+
+.btn:hover{
+
+    background:#fff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 15px rgba(168,208,141,0.5);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#3c3273;
+
+    text-align:center;
+
+    padding:15px 10px;
+
+    font-size:0.8rem;
+}
+
+.footer-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:10px;
+}
+
+.social-icons a{
+
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    transition:0.3s ease;
+}
+
+.social-icons a:hover{
+
+    color:#fff;
+
+    transform:translateY(-3px) scale(1.15);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:900px){
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .services-hero{
+
+        padding-top:50px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:480px){
+
+    /* Header */
+
+    header{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        padding:5px 10px;
+
+        gap:3px;
+    }
+
+
+    /* Logo + Name */
+
+    .brand{
+
+        width:auto;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        gap:5px;
+    }
+
+    .brand img{
+
+        width:35px;
+    }
+
+    .brand a.name-link{
+
+        font-size:1rem;
+
+        letter-spacing:1px;
+    }
+
+
+    /* Navigation */
+
+    nav{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+        gap:5px;
+
+        margin-top:2px;
+    }
+
+    nav a{
+
+        font-size:0.75rem;
+
+        padding:4px 6px;
+    }
+
+    .header-icon{
+
+        font-size:0.9rem;
+
+        margin-left:3px;
+    }
+
+
+    /* Hero */
+
+    .services-hero{
+
+        padding:45px 18px 30px;
+    }
+
+    .services-hero h1{
+
+        font-size:1.9rem;
+    }
+
+    .services-hero p{
+
+        font-size:0.82rem;
+
+        line-height:1.7;
+    }
+
+
+    /* Cards */
+
+    .services-section{
+
+        padding:15px 15px 40px;
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+    .card{
+
+        min-height:auto;
+
+        padding:20px;
+
+        text-align:left;
+    }
+
+
+    /* CTA */
+
+    .cta-section{
+
+        margin:10px 15px 35px;
+
+        padding:28px 18px;
+    }
+
+    .cta-section h2{
+
+        font-size:1.25rem;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width:350px){
+
+    .brand img{
+
+        width:32px;
+    }
+
+    .brand a.name-link{
+
+        font-size:0.9rem;
+    }
+
+    nav{
+
+        gap:2px;
+    }
+
+    nav a{
+
+        font-size:0.65rem;
+
+        padding:3px 5px;
+    }
+
+    .header-icon{
+
+        font-size:0.75rem;
+    }
+
+    .services-hero h1{
+
+        font-size:1.7rem;
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header id="mainHeader">
+
+
     <div class="brand">
-        <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Vision Hub Logo">
+
+        <a
+            href="index.html"
+            class="logo-link"
+        >
+
+            <img
+                src="logo.png"
+                alt="Vision Hub Logo"
+            >
+
         </a>
-        <a href="index.html" class="name-link">Vision Hub</a>
+
+
+        <a
+            href="index.html"
+            class="name-link"
+        >
+
+            Vision Hub
+
+        </a>
+
     </div>
+
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a
+            href="services.html"
+            class="active"
+        >
+            Services
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
         <i class="fa-solid fa-eye header-icon"></i>
+
     </nav>
+
 </header>
 
-<section class="services-section fadeOnScroll">
-    <h2>Our Services</h2>
-    <div class="cards">
-        <div class="card">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Social Media Marketing</h3>
-            <p>Boost your brand visibility across social media platforms.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-users"></i>
-            <h3>Social Media Management</h3>
-            <p>Engage your audience with consistent, quality content.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Paid Ads</h3>
-            <p>Run targeted ads that drive real results and ROI.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-palette"></i>
-            <h3>Visual Identity</h3>
-            <p>Create a consistent and professional brand look.</p>
-        </div>
-    </div>
+
+
+<!-- =========================================================
+     SERVICES INTRO
+========================================================= -->
+
+<section class="services-hero">
+
+    <span class="services-label">
+        WHAT WE DO
+    </span>
+
+
+    <h1>
+
+        Marketing That Builds
+        <span>Real Growth.</span>
+
+    </h1>
+
+
+    <p>
+
+        At Vision Hub, we combine strategy, creativity, and
+        execution to help businesses build strong brands,
+        reach the right audience, and create measurable impact.
+
+    </p>
+
 </section>
 
-<!-- Eye Game -->
-<div class="eye-container">
-    <div class="eye">
-        <div class="pupil"></div>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services-section">
+
+
+    <div class="cards">
+
+
+        <!-- 01 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+            </div>
+
+
+            <h3>
+                Marketing Strategy
+            </h3>
+
+
+            <p>
+
+                We develop clear marketing strategies based on
+                your business goals, target audience, market,
+                and growth opportunities.
+
+            </p>
+
+
+            <span class="service-tag">
+                Strategy & Planning
+            </span>
+
+        </div>
+
+
+
+        <!-- 02 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+            </div>
+
+
+            <h3>
+                Branding & Visual Identity
+            </h3>
+
+
+            <p>
+
+                We create distinctive brand identities that
+                communicate your personality, values, and
+                positioning consistently across every touchpoint.
+
+            </p>
+
+
+            <span class="service-tag">
+                Brand Identity
+            </span>
+
+        </div>
+
+
+
+        <!-- 03 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-pen-nib"></i>
+
+            </div>
+
+
+            <h3>
+                Content Creation
+            </h3>
+
+
+            <p>
+
+                From ideas and copywriting to creative concepts,
+                we create content designed to communicate,
+                engage, and move your audience.
+
+            </p>
+
+
+            <span class="service-tag">
+                Content & Copywriting
+            </span>
+
+        </div>
+
+
+
+        <!-- 04 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-hashtag"></i>
+
+            </div>
+
+
+            <h3>
+                Social Media Management
+            </h3>
+
+
+            <p>
+
+                We manage your social presence through
+                consistent content, community engagement,
+                planning, and platform-specific execution.
+
+            </p>
+
+
+            <span class="service-tag">
+                Social Media
+            </span>
+
+        </div>
+
+
+
+        <!-- 05 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+
+            <h3>
+                Digital Marketing & Paid Ads
+            </h3>
+
+
+            <p>
+
+                We plan and manage targeted digital campaigns
+                designed to reach the right audience and turn
+                marketing budgets into measurable results.
+
+            </p>
+
+
+            <span class="service-tag">
+                Performance Marketing
+            </span>
+
+        </div>
+
+
+
+        <!-- 06 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-camera"></i>
+
+            </div>
+
+
+            <h3>
+                Photography & Video
+            </h3>
+
+
+            <p>
+
+                We produce visual content that brings your brand
+                to life through professional photography,
+                video production, and creative visual storytelling.
+
+            </p>
+
+
+            <span class="service-tag">
+                Visual Content
+            </span>
+
+        </div>
+
+
+
+        <!-- 07 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+
+            <h3>
+                Web Development
+            </h3>
+
+
+            <p>
+
+                We create professional websites and digital
+                experiences that support your brand, communicate
+                your value, and help convert visitors.
+
+            </p>
+
+
+            <span class="service-tag">
+                Web Development
+            </span>
+
+        </div>
+
+
+
+        <!-- 08 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+            </div>
+
+
+            <h3>
+                SEO
+            </h3>
+
+
+            <p>
+
+                We improve your online visibility through
+                search-focused strategies that help your
+                business become easier to discover.
+
+            </p>
+
+
+            <span class="service-tag">
+                Search Optimization
+            </span>
+
+        </div>
+
+
+
+        <!-- 09 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-pen-ruler"></i>
+
+            </div>
+
+
+            <h3>
+                Graphic Design
+            </h3>
+
+
+            <p>
+
+                We design creative marketing materials that
+                maintain your visual identity and communicate
+                your message clearly across different channels.
+
+            </p>
+
+
+            <span class="service-tag">
+                Creative Design
+            </span>
+
+        </div>
+
+
     </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOTTOM STATEMENT
+========================================================= -->
+
+<div class="services-bottom">
+
+    <p>
+
+        One team. Multiple specialties.
+        <strong>One clear direction for your brand.</strong>
+
+    </p>
+
 </div>
 
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <h2>
+        Ready to Build Your Brand?
+    </h2>
+
+
+    <p>
+
+        Let's turn your vision into a strategy,
+        your identity into a brand, and your ideas
+        into real impact.
+
+    </p>
+
+
+    <a
+        href="contact.html"
+        class="btn"
+    >
+
+        Start With Vision Hub
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <p>
+            © 2026 Vision Hub Marketing Agency
+        </p>
+
+
+        <div class="social-icons">
+
+            <a href="index.html">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="index.html">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="index.html">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="index.html">
+                <i class="fas fa-link"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     HEADER SCRIPT
+========================================================= -->
+
 <script>
-// Shrink Header + Fade on Scroll
+
 const header = document.getElementById('mainHeader');
+
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 80){header.classList.add('shrink');}
-    else{header.classList.remove('shrink');}
-    document.querySelectorAll('.fadeOnScroll').forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 100){el.classList.add('visible');}
-    });
+
+    if(window.scrollY > 80){
+
+        header.classList.add('shrink');
+
+    }
+
+    else{
+
+        header.classList.remove('shrink');
+
+    }
+
 });
 
-// Eye Game
-const eyeContainer = document.querySelector('.eye-container');
-const pupil = document.querySelector('.pupil');
-const eye = document.querySelector('.eye');
-
-document.addEventListener('mousemove', e => {
-    const rect = eye.getBoundingClientRect();
-    const eyeX = rect.left + rect.width/2;
-    const eyeY = rect.top + rect.height/2;
-    const dx = e.clientX - eyeX;
-    const dy = e.clientY - eyeY;
-    const angle = Math.atan2(dy, dx);
-    const distance = Math.min(Math.sqrt(dx*dx + dy*dy)/5, 10);
-    pupil.style.transform = `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`;
-});
-
-setInterval(() => {
-    eye.style.animation = 'blink 0.2s';
-    setTimeout(()=> eye.style.animation = '', 200);
-}, Math.random() * 3000 + 3000);
-
-eyeContainer.addEventListener('click', () => {
-    eye.style.transform = 'scale(1.2) rotate(20deg)';
-    eye.style.boxShadow = '0 0 15px #A8D08D, 0 0 30px #fff';
-    setTimeout(() => {
-        eye.style.transform = 'scale(1) rotate(0deg)';
-        eye.style.boxShadow = '0 0 8px rgba(0,0,0,0.4)';
-    }, 400);
-});
 </script>
+
+
 </body>
+
 </html>
