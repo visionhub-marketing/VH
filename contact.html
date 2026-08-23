@@ -1,52 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Vision Hub | Contact</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="logo.png" type="image/png" sizes="16x16">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link
+    rel="icon"
+    href="logo.png"
+    type="image/png"
+    sizes="16x16"
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
 
 <style>
 
-/* نفس CSS من index.html */
+/* =========================================================
+   RESET
+========================================================= */
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{
-    background:#5A4EA1;
-    color:#fff;
-    animation:fadeIn 1s ease-in-out;
-    line-height:1.6;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-a{text-decoration:none;}
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#5A4EA1;
+
+    color:#fff;
+
+    line-height:1.6;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     padding:5px 15px;
+
     background:#4b3f8f;
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
     box-shadow:0 2px 6px rgba(0,0,0,0.2);
+
     transition:all 0.3s ease;
+
     flex-wrap:wrap;
 }
 
-header.shrink{padding:3px 10px;}
+header.shrink{
+    padding:3px 10px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .brand{
+
     display:flex;
+
     align-items:center;
+
     gap:5px;
 }
 
 .brand img{
+
     width:35px;
+
     transition:0.3s ease;
 }
 
@@ -55,10 +125,15 @@ header.shrink .brand img{
 }
 
 .brand a.name-link{
+
     color:#fff;
+
     font-size:1rem;
+
     font-weight:700;
+
     letter-spacing:1px;
+
     transition:0.3s;
 }
 
@@ -66,38 +141,70 @@ header.shrink .brand a.name-link{
     font-size:0.9rem;
 }
 
+.brand a.name-link:hover{
+    opacity:0.85;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 nav{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     flex-wrap:wrap;
+
     margin-top:5px;
 }
 
 nav a{
+
     color:#fff;
+
     font-weight:500;
+
     position:relative;
+
     padding:4px 8px;
+
     border-radius:6px;
+
     font-size:0.85rem;
+
     transition:all 0.3s ease;
 }
 
 nav a::after{
+
     content:"";
+
     position:absolute;
+
     width:0;
+
     height:2px;
+
     background:#A8D08D;
+
     left:0;
+
     bottom:-4px;
+
     transition:0.3s;
 }
 
 nav a:hover{
-    background: rgba(168,208,141,0.15);
+
+    background:rgba(168,208,141,0.15);
+
     color:#A8D08D;
+
     transform:scale(1.05);
 }
 
@@ -105,119 +212,482 @@ nav a:hover::after{
     width:100%;
 }
 
-.header-icon{
+nav a.active{
     color:#A8D08D;
+}
+
+nav a.active::after{
+    width:100%;
+}
+
+
+/* Header Icon */
+
+.header-icon{
+
+    color:#A8D08D;
+
     font-size:1rem;
+
     margin-left:5px;
+
     transition:all 0.3s ease;
 }
 
 .header-icon:hover{
+
     color:#fff;
+
     transform:scale(1.2) rotate(15deg);
 }
 
-section{
-    padding:50px 15px;
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section{
+
+    flex:1;
+
+    padding:70px 20px;
+
     text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:70vh;
 }
 
-h2{
-    font-size:1.8rem;
-    margin-bottom:35px;
+
+/* Small Label */
+
+.section-label{
+
+    display:inline-block;
+
+    color:#A8D08D;
+
+    font-size:0.72rem;
+
+    font-weight:500;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
 }
+
+
+/* Heading */
+
+.contact-section h2{
+
+    font-size:2.2rem;
+
+    margin-bottom:10px;
+
+    line-height:1.2;
+}
+
+.contact-section h2 span{
+    color:#A8D08D;
+}
+
+
+/* Description */
+
+.contact-intro{
+
+    max-width:600px;
+
+    margin:0 auto 30px;
+
+    color:rgba(255,255,255,0.78);
+
+    font-size:0.85rem;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 form{
-    max-width:400px;
-    margin:0 auto;
+
+    width:100%;
+
+    max-width:500px;
+
     display:flex;
+
     flex-direction:column;
+
     gap:12px;
+
+    background:#4b3f8f;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.2);
 }
 
-input,textarea{
-    padding:10px;
+
+/* Inputs */
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:12px 14px;
+
     border-radius:8px;
+
     border:none;
-    font-size:0.9rem;
+
+    outline:none;
+
+    font-size:0.85rem;
+
+    color:#333;
+
+    background:#fff;
+
+    transition:all 0.3s ease;
+}
+
+input:focus,
+textarea:focus{
+
+    box-shadow:
+        0 0 0 2px #A8D08D;
 }
 
 textarea{
+
     resize:none;
-    height:120px;
+
+    height:130px;
 }
 
+
+/* Button */
+
 button{
+
     padding:12px;
+
     border-radius:30px;
+
     background:#A8D08D;
+
     border:none;
+
     color:#2e2e2e;
-    font-weight:bold;
+
+    font-weight:700;
+
+    font-size:0.85rem;
+
     cursor:pointer;
-    transition:0.3s;
+
+    transition:all 0.3s ease;
 }
 
 button:hover{
-    background:#8E7CC3;
-    color:#fff;
+
+    background:#fff;
+
+    color:#4b3f8f;
+
     transform:translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(168,208,141,0.25);
 }
 
-.fadeOnScroll{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all 0.8s ease;
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#3c3273;
+
+    text-align:center;
+
+    padding:20px 10px;
+
+    font-size:0.8rem;
 }
 
-.fadeOnScroll.visible{
-    opacity:1;
-    transform:translateY(0);
+.footer-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
 }
 
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+.social-icons{
+
+    display:flex;
+
+    gap:12px;
 }
 
-@keyframes fadeSlide{
-    0%{
-        opacity:0;
-        transform:translateY(20px);
+.social-icons a{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(168,208,141,0.1);
+
+    color:#A8D08D;
+
+    font-size:0.95rem;
+
+    transition:all 0.3s ease;
+}
+
+.social-icons a:hover{
+
+    background:#A8D08D;
+
+    color:#3c3273;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:480px){
+
+    /* Header */
+
+    header{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        padding:5px 10px;
+
+        gap:3px;
     }
-    100%{
-        opacity:1;
-        transform:translateY(0);
+
+
+    /* Logo + Name */
+
+    .brand{
+
+        width:auto;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        gap:5px;
     }
+
+    .brand img{
+        width:35px;
+    }
+
+    .brand a.name-link{
+
+        font-size:1rem;
+
+        letter-spacing:1px;
+    }
+
+
+    /* Navigation */
+
+    nav{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+        gap:5px;
+
+        margin-top:2px;
+    }
+
+    nav a{
+
+        font-size:0.75rem;
+
+        padding:4px 6px;
+    }
+
+    .header-icon{
+
+        font-size:0.9rem;
+
+        margin-left:3px;
+    }
+
+
+    /* Contact */
+
+    .contact-section{
+
+        padding:50px 15px;
+
+        min-height:70vh;
+    }
+
+    .contact-section h2{
+
+        font-size:1.8rem;
+    }
+
+    .contact-intro{
+
+        font-size:0.78rem;
+
+        line-height:1.7;
+    }
+
+    form{
+
+        padding:22px 18px;
+
+        border-radius:15px;
+    }
+
+
+    /* Footer */
+
+    footer{
+
+        padding:18px 10px;
+
+        font-size:0.72rem;
+    }
+
 }
 
-@keyframes buttonPulse{
-    0%,100%{
-        transform:scale(1);
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width:350px){
+
+    .brand img{
+        width:32px;
     }
-    50%{
-        transform:scale(1.05);
+
+    .brand a.name-link{
+        font-size:0.9rem;
     }
+
+    nav{
+        gap:2px;
+    }
+
+    nav a{
+
+        font-size:0.65rem;
+
+        padding:3px 5px;
+    }
+
+    .header-icon{
+        font-size:0.75rem;
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header id="mainHeader">
+
 
     <div class="brand">
 
-        <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Vision Hub Logo">
+        <a
+            href="index.html"
+            class="logo-link"
+        >
+
+            <img
+                src="logo.png"
+                alt="Vision Hub Logo"
+            >
+
         </a>
 
-        <a href="index.html" class="name-link">
+
+        <a
+            href="index.html"
+            class="name-link"
+        >
+
             Vision Hub
+
         </a>
 
     </div>
+
 
     <nav>
 
@@ -233,7 +703,10 @@ button:hover{
             Services
         </a>
 
-        <a href="contact.html">
+        <a
+            href="contact.html"
+            class="active"
+        >
             Contact
         </a>
 
@@ -244,16 +717,38 @@ button:hover{
 </header>
 
 
-<section class="contact-section fadeOnScroll visible">
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact-section">
+
+
+    <span class="section-label">
+        GET IN TOUCH
+    </span>
+
 
     <h2>
-        Contact Us
+        Let's Build Something <span>Great.</span>
     </h2>
+
+
+    <p class="contact-intro">
+
+        Have a project, idea, or business you want to grow?
+        Tell us about it and let's explore how Vision Hub
+        can help turn your vision into impact.
+
+    </p>
+
 
     <form
         action="https://formsubmit.co/vision.hub.vh@gmail.com"
         method="POST"
     >
+
 
         <input
             type="text"
@@ -262,6 +757,7 @@ button:hover{
             required
         >
 
+
         <input
             type="email"
             name="email"
@@ -269,11 +765,15 @@ button:hover{
             required
         >
 
+
         <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder="Tell us about your project..."
             required
         ></textarea>
+
+
+        <!-- Email Subject -->
 
         <input
             type="hidden"
@@ -281,11 +781,17 @@ button:hover{
             value="New Message - Vision Hub Website"
         >
 
+
+        <!-- Email Template -->
+
         <input
             type="hidden"
             name="_template"
             value="table"
         >
+
+
+        <!-- Honeypot -->
 
         <input
             type="text"
@@ -293,44 +799,135 @@ button:hover{
             style="display:none"
         >
 
+
         <button type="submit">
+
             Send Message
+
         </button>
 
+
     </form>
+
 
 </section>
 
 
-<script>
 
-// Shrink Header + Fade on Scroll
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+    <div class="footer-content">
+
+
+        <p>
+            © 2026 Vision Hub Marketing Agency
+        </p>
+
+
+        <div class="social-icons">
+
+
+            <!-- Facebook -->
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61580311856103"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+
+                <i class="fab fa-facebook-f"></i>
+
+            </a>
+
+
+
+            <!-- Instagram -->
+
+            <a
+                href="https://www.instagram.com/vision.hub__marketing.agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://www.linkedin.com/company/vision-hub-marketing-agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+
+                <i class="fab fa-linkedin-in"></i>
+
+            </a>
+
+
+
+            <!-- Linktree -->
+
+            <a
+                href="https://linktr.ee/vision_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linktree"
+            >
+
+                <i class="fas fa-link"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     HEADER SCRIPT
+========================================================= -->
+
+<script>
 
 const header = document.getElementById('mainHeader');
 
 window.addEventListener('scroll', () => {
 
     if(window.scrollY > 80){
+
         header.classList.add('shrink');
+
     }
+
     else{
+
         header.classList.remove('shrink');
+
     }
-
-    document.querySelectorAll('.fadeOnScroll').forEach(el=>{
-
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if(top < windowHeight - 100){
-            el.classList.add('visible');
-        }
-
-    });
 
 });
 
 </script>
 
+
 </body>
+
 </html>
