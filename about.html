@@ -20,7 +20,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 >
 
-
 <style>
 
 /* ==============================
@@ -37,8 +36,8 @@
 body{
     background:#5A4EA1;
     color:#fff;
-    animation:fadeIn 1s ease-in-out;
     line-height:1.6;
+    animation:fadeIn 1s ease-in-out;
 }
 
 a{
@@ -66,17 +65,13 @@ header{
 
     box-shadow:0 2px 6px rgba(0,0,0,0.2);
 
-    transition:all 0.3s ease;
-
     flex-wrap:wrap;
 }
 
-header.shrink{
-    padding:3px 10px;
-}
 
-
-/* Brand */
+/* ==============================
+   BRAND
+================================ */
 
 .brand{
     display:flex;
@@ -86,11 +81,6 @@ header.shrink{
 
 .brand img{
     width:35px;
-    transition:0.3s ease;
-}
-
-header.shrink .brand img{
-    width:30px;
 }
 
 .brand a.name-link{
@@ -105,16 +95,14 @@ header.shrink .brand img{
     transition:0.3s;
 }
 
-header.shrink .brand a.name-link{
-    font-size:0.9rem;
-}
-
 .brand a.name-link:hover{
     opacity:0.85;
 }
 
 
-/* Navigation */
+/* ==============================
+   NAVIGATION
+================================ */
 
 nav{
     display:flex;
@@ -175,7 +163,9 @@ nav a:hover::after{
 }
 
 
-/* Header Icon */
+/* ==============================
+   HEADER ICON
+================================ */
 
 .header-icon{
     color:#A8D08D;
@@ -222,7 +212,9 @@ section{
 }
 
 
-/* Image */
+/* ==============================
+   IMAGE
+================================ */
 
 .about-image,
 .about-text{
@@ -297,7 +289,9 @@ section{
 }
 
 
-/* Value Box */
+/* ==============================
+   VALUE BOX
+================================ */
 
 .value-box{
 
@@ -320,7 +314,9 @@ section{
 }
 
 
-/* Value Title */
+/* ==============================
+   VALUE TITLE
+================================ */
 
 .value-box h3{
 
@@ -334,7 +330,9 @@ section{
 }
 
 
-/* Value Description */
+/* ==============================
+   VALUE DESCRIPTION
+================================ */
 
 .value-box p{
 
@@ -349,7 +347,7 @@ section{
 
 
 /* ==============================
-   ENDING STATEMENT
+   CLOSING STATEMENT
 ================================ */
 
 .about-ending{
@@ -374,28 +372,7 @@ section{
 
 
 /* ==============================
-   SCROLL ANIMATION
-================================ */
-
-.fadeOnScroll{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-    transition:all 0.8s ease;
-}
-
-.fadeOnScroll.visible{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-
-/* ==============================
-   ANIMATIONS
+   PAGE ANIMATION
 ================================ */
 
 @keyframes fadeIn{
@@ -406,42 +383,6 @@ section{
 
     to{
         opacity:1;
-    }
-}
-
-
-@keyframes fadeSlide{
-
-    0%{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    100%{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-}
-
-
-@keyframes buttonPulse{
-
-    0%,100%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.05);
-
     }
 }
 
@@ -485,7 +426,7 @@ section{
     }
 
 
-    .about-text p{
+    .about-text > p{
 
         font-size:0.9rem;
     }
@@ -584,7 +525,7 @@ section{
      HEADER
 ================================ -->
 
-<header id="mainHeader">
+<header>
 
     <div class="brand">
 
@@ -640,10 +581,10 @@ section{
      ABOUT SECTION
 ================================ -->
 
-<section class="about-section fadeOnScroll visible">
+<section class="about-section">
 
 
-    <!-- Image -->
+    <!-- TEAM IMAGE -->
 
     <div class="about-image">
 
@@ -656,7 +597,7 @@ section{
 
 
 
-    <!-- Content -->
+    <!-- ABOUT CONTENT -->
 
     <div class="about-text">
 
@@ -695,12 +636,12 @@ section{
 
 
 
-        <!-- Core Principles -->
+        <!-- ==============================
+             VISION
+        =============================== -->
 
         <div class="vision-values">
 
-
-            <!-- Vision -->
 
             <div class="value-box">
 
@@ -720,7 +661,9 @@ section{
 
 
 
-            <!-- Identity -->
+            <!-- ==============================
+                 IDENTITY
+            =============================== -->
 
             <div class="value-box">
 
@@ -741,7 +684,9 @@ section{
 
 
 
-            <!-- Impact -->
+            <!-- ==============================
+                 IMPACT
+            =============================== -->
 
             <div class="value-box">
 
@@ -764,7 +709,9 @@ section{
 
 
 
-        <!-- Closing -->
+        <!-- ==============================
+             CLOSING
+        =============================== -->
 
         <p class="about-ending">
 
@@ -784,65 +731,6 @@ section{
     </div>
 
 </section>
-
-
-
-<!-- ==============================
-     JAVASCRIPT
-================================ -->
-
-<script>
-
-/* Shrink Header + Scroll Animation */
-
-const header = document.getElementById('mainHeader');
-
-
-window.addEventListener('scroll', () => {
-
-
-    /* Shrink Header */
-
-    if(window.scrollY > 80){
-
-        header.classList.add('shrink');
-
-    }
-
-    else{
-
-        header.classList.remove('shrink');
-
-    }
-
-
-
-    /* Fade On Scroll */
-
-    document
-        .querySelectorAll('.fadeOnScroll')
-        .forEach(el => {
-
-
-            const top =
-                el.getBoundingClientRect().top;
-
-
-            const windowHeight =
-                window.innerHeight;
-
-
-            if(top < windowHeight - 100){
-
-                el.classList.add('visible');
-
-            }
-
-        });
-
-});
-
-</script>
 
 
 </body>
