@@ -58,14 +58,12 @@ a{
 
 /* =========================================================
    HEADER
-   SAME STYLE AS HOME
+   SAME AS HOME
 ========================================================= */
 
 header{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     padding:5px 15px;
@@ -73,9 +71,7 @@ header{
     background:#4b3f8f;
 
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
     box-shadow:0 2px 6px rgba(0,0,0,0.2);
@@ -84,9 +80,6 @@ header{
 
     flex-wrap:wrap;
 }
-
-
-/* Header Shrink */
 
 header.shrink{
     padding:3px 10px;
@@ -99,17 +92,13 @@ header.shrink{
 
 .brand{
     display:flex;
-
     align-items:center;
-
     gap:5px;
 }
 
 .brand img{
     width:35px;
-
     display:block;
-
     transition:0.3s ease;
 }
 
@@ -119,13 +108,9 @@ header.shrink .brand img{
 
 .brand a.name-link{
     color:#fff;
-
     font-size:1rem;
-
     font-weight:700;
-
     letter-spacing:1px;
-
     transition:0.3s;
 }
 
@@ -144,21 +129,15 @@ header.shrink .brand a.name-link{
 
 nav{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     flex-wrap:wrap;
-
     margin-top:5px;
 }
 
 nav a{
     color:#fff;
-
     font-weight:500;
-
     position:relative;
 
     padding:4px 8px;
@@ -179,13 +158,11 @@ nav a::after{
     position:absolute;
 
     width:0;
-
     height:2px;
 
     background:#A8D08D;
 
     left:0;
-
     bottom:-4px;
 
     transition:0.3s;
@@ -196,9 +173,7 @@ nav a::after{
 
 nav a:hover{
     background:rgba(168,208,141,0.15);
-
     color:#A8D08D;
-
     transform:scale(1.05);
 }
 
@@ -207,7 +182,7 @@ nav a:hover::after{
 }
 
 
-/* Active */
+/* Active Page */
 
 nav a.active{
     color:#A8D08D;
@@ -219,11 +194,31 @@ nav a.active::after{
 
 
 /* =========================================================
+   SMALL EYE ICON
+========================================================= */
+
+.header-icon{
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    margin-left:5px;
+
+    transition:all 0.3s ease;
+}
+
+.header-icon:hover{
+    color:#fff;
+
+    transform:scale(1.2) rotate(15deg);
+}
+
+
+/* =========================================================
    SERVICES HERO
 ========================================================= */
 
 .services-hero{
-
     text-align:center;
 
     padding:65px 20px 40px;
@@ -234,7 +229,6 @@ nav a.active::after{
 }
 
 .services-label{
-
     display:inline-block;
 
     color:#A8D08D;
@@ -251,7 +245,6 @@ nav a.active::after{
 }
 
 .services-hero h1{
-
     font-size:2.4rem;
 
     line-height:1.2;
@@ -260,12 +253,10 @@ nav a.active::after{
 }
 
 .services-hero h1 span{
-
     color:#A8D08D;
 }
 
 .services-hero p{
-
     max-width:700px;
 
     margin:auto;
@@ -283,7 +274,6 @@ nav a.active::after{
 ========================================================= */
 
 .services-section{
-
     padding:25px 20px 60px;
 
     max-width:1150px;
@@ -297,7 +287,6 @@ nav a.active::after{
 ========================================================= */
 
 .cards{
-
     display:grid;
 
     grid-template-columns:
@@ -312,7 +301,6 @@ nav a.active::after{
 ========================================================= */
 
 .card{
-
     background:#4b3f8f;
 
     padding:25px 22px;
@@ -334,17 +322,14 @@ nav a.active::after{
 /* Top Line */
 
 .card::before{
-
     content:"";
 
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:0;
-
     height:3px;
 
     background:#A8D08D;
@@ -356,7 +341,6 @@ nav a.active::after{
 /* Hover */
 
 .card:hover{
-
     transform:translateY(-7px);
 
     box-shadow:
@@ -364,7 +348,6 @@ nav a.active::after{
 }
 
 .card:hover::before{
-
     width:100%;
 }
 
@@ -374,15 +357,12 @@ nav a.active::after{
 ========================================================= */
 
 .card-icon{
-
     width:48px;
-
     height:48px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:10px;
@@ -399,7 +379,6 @@ nav a.active::after{
 }
 
 .card:hover .card-icon{
-
     background:#A8D08D;
 
     color:#4b3f8f;
@@ -413,7 +392,6 @@ nav a.active::after{
 ========================================================= */
 
 .card h3{
-
     font-size:1.05rem;
 
     margin-bottom:10px;
@@ -422,7 +400,6 @@ nav a.active::after{
 }
 
 .card p{
-
     font-size:0.78rem;
 
     line-height:1.75;
@@ -436,7 +413,6 @@ nav a.active::after{
 /* Service Tag */
 
 .service-tag{
-
     display:inline-block;
 
     font-size:0.65rem;
@@ -456,21 +432,18 @@ nav a.active::after{
 ========================================================= */
 
 .services-bottom{
-
     text-align:center;
 
     padding:5px 15px 50px;
 }
 
 .services-bottom p{
-
     font-size:0.9rem;
 
     color:rgba(255,255,255,0.75);
 }
 
 .services-bottom strong{
-
     color:#fff;
 }
 
@@ -480,7 +453,6 @@ nav a.active::after{
 ========================================================= */
 
 .cta-section{
-
     max-width:1050px;
 
     margin:0 auto 50px;
@@ -498,14 +470,12 @@ nav a.active::after{
 }
 
 .cta-section h2{
-
     font-size:1.5rem;
 
     margin-bottom:10px;
 }
 
 .cta-section p{
-
     font-size:0.82rem;
 
     color:rgba(255,255,255,0.8);
@@ -514,10 +484,11 @@ nav a.active::after{
 }
 
 
-/* CTA Button */
+/* =========================================================
+   CTA BUTTON
+========================================================= */
 
 .btn{
-
     display:inline-block;
 
     background:#A8D08D;
@@ -536,7 +507,6 @@ nav a.active::after{
 }
 
 .btn:hover{
-
     background:#fff;
 
     transform:translateY(-3px);
@@ -551,7 +521,6 @@ nav a.active::after{
 ========================================================= */
 
 footer{
-
     background:#3c3273;
 
     text-align:center;
@@ -562,7 +531,6 @@ footer{
 }
 
 .footer-content{
-
     display:flex;
 
     flex-direction:column;
@@ -573,12 +541,10 @@ footer{
 }
 
 .footer-content p{
-
     color:rgba(255,255,255,0.85);
 }
 
 .social-icons{
-
     display:flex;
 
     align-items:center;
@@ -589,15 +555,12 @@ footer{
 }
 
 .social-icons a{
-
     width:32px;
-
     height:32px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     color:#A8D08D;
@@ -610,7 +573,6 @@ footer{
 }
 
 .social-icons a:hover{
-
     color:#fff;
 
     background:rgba(168,208,141,0.15);
@@ -624,7 +586,6 @@ footer{
 ========================================================= */
 
 @keyframes fadeIn{
-
     from{
         opacity:0;
     }
@@ -642,13 +603,11 @@ footer{
 @media (max-width:900px){
 
     .cards{
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
     .services-hero{
-
         padding-top:50px;
     }
 
@@ -664,7 +623,6 @@ footer{
     /* ================= HEADER ================= */
 
     header{
-
         width:100%;
 
         display:flex;
@@ -686,7 +644,6 @@ footer{
     /* Logo + Name */
 
     .brand{
-
         width:auto;
 
         display:flex;
@@ -699,22 +656,19 @@ footer{
     }
 
     .brand img{
-
         width:35px;
     }
 
     .brand a.name-link{
-
         font-size:1rem;
 
         letter-spacing:1px;
     }
 
 
-    /* Navigation Below Brand */
+    /* Navigation */
 
     nav{
-
         width:100%;
 
         display:flex;
@@ -731,32 +685,33 @@ footer{
     }
 
     nav a{
-
         font-size:0.75rem;
 
         padding:4px 6px;
+    }
+
+    .header-icon{
+        font-size:0.9rem;
+
+        margin-left:3px;
     }
 
 
     /* ================= HERO ================= */
 
     .services-hero{
-
         padding:45px 18px 30px;
     }
 
     .services-label{
-
         font-size:0.68rem;
     }
 
     .services-hero h1{
-
         font-size:1.9rem;
     }
 
     .services-hero p{
-
         font-size:0.82rem;
 
         line-height:1.7;
@@ -766,19 +721,16 @@ footer{
     /* ================= CARDS ================= */
 
     .services-section{
-
         padding:15px 15px 40px;
     }
 
     .cards{
-
         grid-template-columns:1fr;
 
         gap:12px;
     }
 
     .card{
-
         min-height:auto;
 
         padding:20px;
@@ -787,12 +739,10 @@ footer{
     }
 
     .card h3{
-
         font-size:1rem;
     }
 
     .card p{
-
         font-size:0.77rem;
     }
 
@@ -800,12 +750,10 @@ footer{
     /* ================= BOTTOM ================= */
 
     .services-bottom{
-
         padding:5px 20px 35px;
     }
 
     .services-bottom p{
-
         font-size:0.8rem;
 
         line-height:1.7;
@@ -815,19 +763,16 @@ footer{
     /* ================= CTA ================= */
 
     .cta-section{
-
         margin:10px 15px 35px;
 
         padding:28px 18px;
     }
 
     .cta-section h2{
-
         font-size:1.25rem;
     }
 
     .cta-section p{
-
         font-size:0.77rem;
 
         line-height:1.7;
@@ -837,12 +782,10 @@ footer{
     /* ================= FOOTER ================= */
 
     footer{
-
         padding:18px 10px;
     }
 
     .social-icons{
-
         gap:10px;
     }
 
@@ -856,29 +799,28 @@ footer{
 @media (max-width:350px){
 
     .brand img{
-
         width:32px;
     }
 
     .brand a.name-link{
-
         font-size:0.9rem;
     }
 
     nav{
-
         gap:2px;
     }
 
     nav a{
-
         font-size:0.65rem;
 
         padding:3px 5px;
     }
 
-    .services-hero h1{
+    .header-icon{
+        font-size:0.75rem;
+    }
 
+    .services-hero h1{
         font-size:1.7rem;
     }
 
@@ -950,6 +892,11 @@ footer{
             Contact
         </a>
 
+
+        <!-- Small Header Eye -->
+
+        <i class="fa-solid fa-eye header-icon"></i>
+
     </nav>
 
 
@@ -1004,25 +951,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-lightbulb"></i>
-
             </div>
-
 
             <h3>
                 Marketing Strategy
             </h3>
 
-
             <p>
-
                 We develop clear marketing strategies based
                 on your business goals, target audience,
                 market, and growth opportunities.
-
             </p>
-
 
             <span class="service-tag">
                 Strategy & Planning
@@ -1037,25 +977,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-fingerprint"></i>
-
             </div>
-
 
             <h3>
                 Branding & Visual Identity
             </h3>
 
-
             <p>
-
                 We create distinctive brand identities that
                 communicate your personality, values, and
                 positioning consistently across every touchpoint.
-
             </p>
-
 
             <span class="service-tag">
                 Brand Identity
@@ -1070,25 +1003,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-pen-nib"></i>
-
             </div>
-
 
             <h3>
                 Content Creation
             </h3>
 
-
             <p>
-
                 From ideas and copywriting to creative concepts,
                 we create content designed to communicate,
                 engage, and move your audience.
-
             </p>
-
 
             <span class="service-tag">
                 Content & Copywriting
@@ -1103,25 +1029,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-hashtag"></i>
-
             </div>
-
 
             <h3>
                 Social Media Management
             </h3>
 
-
             <p>
-
                 We manage your social presence through
                 consistent content, community engagement,
                 planning, and platform-specific execution.
-
             </p>
-
 
             <span class="service-tag">
                 Social Media
@@ -1136,25 +1055,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-chart-line"></i>
-
             </div>
-
 
             <h3>
                 Digital Marketing & Paid Ads
             </h3>
 
-
             <p>
-
                 We plan and manage targeted digital campaigns
                 designed to reach the right audience and turn
                 marketing budgets into measurable results.
-
             </p>
-
 
             <span class="service-tag">
                 Performance Marketing
@@ -1169,25 +1081,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-camera"></i>
-
             </div>
-
 
             <h3>
                 Photography & Video
             </h3>
 
-
             <p>
-
                 We produce visual content that brings your
                 brand to life through professional photography,
                 video production, and creative storytelling.
-
             </p>
-
 
             <span class="service-tag">
                 Visual Content
@@ -1202,25 +1107,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-code"></i>
-
             </div>
-
 
             <h3>
                 Web Development
             </h3>
 
-
             <p>
-
                 We create professional websites and digital
                 experiences that support your brand,
                 communicate your value, and help convert visitors.
-
             </p>
-
 
             <span class="service-tag">
                 Web Development
@@ -1235,25 +1133,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
-
             </div>
-
 
             <h3>
                 SEO
             </h3>
 
-
             <p>
-
                 We improve your online visibility through
                 search-focused strategies that help your
                 business become easier to discover.
-
             </p>
-
 
             <span class="service-tag">
                 Search Optimization
@@ -1268,25 +1159,18 @@ footer{
         <div class="card">
 
             <div class="card-icon">
-
                 <i class="fa-solid fa-pen-ruler"></i>
-
             </div>
-
 
             <h3>
                 Graphic Design
             </h3>
 
-
             <p>
-
                 We design creative marketing materials that
                 maintain your visual identity and communicate
                 your message clearly across different channels.
-
             </p>
-
 
             <span class="service-tag">
                 Creative Design
