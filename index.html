@@ -1,346 +1,1813 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Vision Hub | Home</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Favicon -->
-<link rel="icon" href="logo.png" type="image/png" sizes="16x16">
+<link
+    rel="icon"
+    href="logo.png"
+    type="image/png"
+    sizes="16x16"
+>
 
 <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+>
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
 
 <style>
-/* Reset */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#5A4EA1;color:#fff;animation:fadeIn 1s ease-in-out;line-height:1.6;}
-a{text-decoration:none;}
 
-/* Header - Minimal */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:5px 15px;
-    background:#4b3f8f;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 6px rgba(0,0,0,0.2);
-    transition:all 0.3s ease;
-    flex-wrap:wrap;
-}
-header.shrink{padding:3px 10px;}
-.brand{display:flex;align-items:center;gap:5px;}
-.brand img{width:35px;transition:0.3s ease;}
-header.shrink .brand img{width:30px;}
-.brand a.name-link{color:#fff;font-size:1rem;font-weight:700;letter-spacing:1px;transition:0.3s;}
-header.shrink .brand a.name-link{font-size:0.9rem;}
-.brand a.name-link:hover{opacity:0.85;}
-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px;}
-nav a{color:#fff;font-weight:500;position:relative;padding:4px 8px;border-radius:6px;font-size:0.85rem;transition:all 0.3s ease;}
-nav a::after{content:"";position:absolute;width:0;height:2px;background:#A8D08D;left:0;bottom:-4px;transition:0.3s;}
-nav a:hover{background:rgba(168,208,141,0.15);color:#A8D08D;transform:scale(1.05);}
-nav a:hover::after{width:100%;}
-.header-icon{color:#A8D08D;font-size:1rem;margin-left:5px;transition:all 0.3s ease;}
-.header-icon:hover{color:#fff;transform:scale(1.2) rotate(15deg);}
+/* =========================================================
+   RESET
+========================================================= */
 
-/* Hero Section */
-.hero{
-    height:60vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:radial-gradient(circle,#7b6cd9,#5A4EA1);
-    padding:0 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
-.hero h1,.hero p{
-    font-weight:700;
-    opacity:0;
-    animation:fadeSlide 2s ease forwards;
-    background:linear-gradient(90deg,#A8D08D,#fff,#A8D08D);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
+
+html{
+    scroll-behavior:smooth;
 }
-.hero h1{font-size:2rem;margin-bottom:8px;}
-.hero p{font-size:1rem;opacity:0.9;margin-bottom:15px;font-weight:500;}
-.btn{
-    background:#A8D08D;
-    color:#2e2e2e;
-    padding:10px 20px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s ease;
-    animation:buttonPulse 1.5s infinite;
-}
-.btn:hover{
-    background:#8E7CC3;
+
+body{
+    background:#5A4EA1;
     color:#fff;
-    transform:translateY(-5px) scale(1.05);
-    box-shadow:0 0 12px rgba(168,208,141,0.6);
+    line-height:1.6;
+    overflow-x:hidden;
 }
 
-/* About Section */
-.about-section{
+a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    padding:50px 15px;
-    background:#6c5bb3;
-}
-.about-image,.about-text{flex:1 1 280px;margin:10px;}
-.about-image img{
-    width:100%;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
-.about-text h2{font-size:1.8rem;margin-bottom:12px;color:#fff;}
-.about-text p{font-size:0.95rem;opacity:0.9;line-height:1.4;}
 
-/* Services Section */
-.services-section{padding:50px 15px;text-align:center;}
-.services-section h2{font-size:1.8rem;margin-bottom:35px;}
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
-.card{
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:5px 15px;
+
     background:#4b3f8f;
-    padding:20px;
-    border-radius:15px;
-    width:200px;
-    transition:0.4s ease;
-    cursor:pointer;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+
+    transition:all 0.3s ease;
+
+    flex-wrap:wrap;
 }
-.card:hover{
-    transform:scale(1.05);
-    box-shadow:0 8px 20px rgba(168,208,141,0.5);
+
+
+/* Shrink */
+
+header.shrink{
+    padding:3px 10px;
 }
-.card i{
-    font-size:1.8rem;
-    margin-bottom:10px;
-    color:#A8D08D;
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+.brand img{
+
+    width:35px;
+
+    transition:0.3s ease;
+}
+
+header.shrink .brand img{
+
+    width:30px;
+}
+
+.brand a.name-link{
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
     transition:0.3s;
 }
-.card:hover i{transform:rotate(15deg) scale(1.2);}
-.card h3{font-size:1.1rem;margin-bottom:8px;}
-.card p{font-size:0.85rem;opacity:0.9;line-height:1.3;}
 
-/* Call To Action */
-.cta-section{
-    padding:40px 15px;
-    text-align:center;
-    background:#8E7CC3;
-    border-radius:12px;
-    margin:40px;
-}
-.cta-section h2{font-size:1.6rem;margin-bottom:15px;}
-.cta-section .btn{font-size:1rem;}
+header.shrink .brand a.name-link{
 
-/* Footer */
-footer{
-    background:#3c3273;
-    text-align:center;
-    padding:15px 10px;
-    font-size:0.85rem;
+    font-size:0.9rem;
 }
-footer .footer-content{
+
+.brand a.name-link:hover{
+
+    opacity:0.85;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
     display:flex;
-    flex-direction:column;
+
     align-items:center;
-    gap:8px;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:5px;
 }
-footer .social-icons{display:flex;gap:8px;}
-footer .social-icons a{
-    color:#A8D08D;
-    font-size:1.1rem;
-    transition:0.3s ease;
-}
-footer .social-icons a:hover{
+
+nav a{
+
     color:#fff;
-    transform:translateY(-4px) scale(1.2) rotate(10deg);
+
+    font-weight:500;
+
+    position:relative;
+
+    padding:4px 8px;
+
+    border-radius:6px;
+
+    font-size:0.85rem;
+
+    transition:all 0.3s ease;
 }
 
-/* Animations */
+
+/* Underline */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#A8D08D;
+
+    left:0;
+
+    bottom:-4px;
+
+    transition:0.3s;
+}
+
+
+/* Hover */
+
+nav a:hover{
+
+    background:rgba(168,208,141,0.15);
+
+    color:#A8D08D;
+
+    transform:scale(1.05);
+}
+
+nav a:hover::after{
+
+    width:100%;
+}
+
+
+/* Active */
+
+nav a.active{
+
+    color:#A8D08D;
+}
+
+nav a.active::after{
+
+    width:100%;
+}
+
+
+/* Header Eye */
+
+.header-icon{
+
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    margin-left:5px;
+
+    transition:all 0.3s ease;
+}
+
+.header-icon:hover{
+
+    color:#fff;
+
+    transform:scale(1.2) rotate(15deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:62vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #7b6cd9 0%,
+            #5A4EA1 65%
+        );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* Decorative Glow */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:#A8D08D;
+
+    opacity:0.06;
+
+    border-radius:50%;
+
+    top:-150px;
+
+    left:-100px;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:#fff;
+
+    opacity:0.04;
+
+    border-radius:50%;
+
+    bottom:-150px;
+
+    right:-100px;
+}
+
+
+/* Hero Content */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+}
+
+
+/* Small Label */
+
+.hero-label{
+
+    display:inline-block;
+
+    color:#A8D08D;
+
+    font-size:0.75rem;
+
+    font-weight:500;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+
+/* Hero Title */
+
+.hero h1{
+
+    font-size:3rem;
+
+    line-height:1.15;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+}
+
+.hero h1 span{
+
+    color:#A8D08D;
+}
+
+
+/* Hero Paragraph */
+
+.hero p{
+
+    font-size:1rem;
+
+    max-width:650px;
+
+    margin:0 auto 25px;
+
+    color:rgba(255,255,255,0.85);
+
+    line-height:1.8;
+}
+
+
+/* Button */
+
+.btn{
+
+    display:inline-block;
+
+    background:#A8D08D;
+
+    color:#2e2e2e;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-size:0.82rem;
+
+    font-weight:700;
+
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+
+    background:#fff;
+
+    color:#4b3f8f;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(168,208,141,0.35);
+}
+
+
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
+
+.about-section{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:45px;
+
+    padding:70px 25px;
+
+    background:#6c5bb3;
+}
+
+
+/* Image */
+
+.about-image{
+
+    flex:1 1 400px;
+
+    max-width:500px;
+}
+
+.about-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+}
+
+
+/* Text */
+
+.about-text{
+
+    flex:1 1 450px;
+
+    max-width:550px;
+}
+
+.section-label{
+
+    display:inline-block;
+
+    color:#A8D08D;
+
+    font-size:0.72rem;
+
+    font-weight:500;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.about-text h2{
+
+    font-size:2rem;
+
+    line-height:1.2;
+
+    margin-bottom:15px;
+}
+
+.about-text h2 span{
+
+    color:#A8D08D;
+}
+
+.about-text p{
+
+    font-size:0.88rem;
+
+    color:rgba(255,255,255,0.82);
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================================================
+   CORE VALUES
+========================================================= */
+
+.values{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.value{
+
+    flex:1;
+
+    background:#4b3f8f;
+
+    padding:17px;
+
+    border-radius:12px;
+
+    transition:all 0.35s ease;
+}
+
+.value:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.2);
+}
+
+.value i{
+
+    color:#A8D08D;
+
+    font-size:1.2rem;
+
+    margin-bottom:8px;
+}
+
+.value h3{
+
+    font-size:0.95rem;
+
+    margin-bottom:5px;
+}
+
+.value p{
+
+    font-size:0.7rem;
+
+    line-height:1.6;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section{
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    max-width:1150px;
+
+    margin:auto;
+}
+
+.services-section h2{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.services-intro{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    font-size:0.85rem;
+
+    color:rgba(255,255,255,0.75);
+}
+
+
+/* Service Cards */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.card{
+
+    background:#4b3f8f;
+
+    padding:22px 17px;
+
+    border-radius:15px;
+
+    min-height:200px;
+
+    transition:all 0.4s ease;
+
+    border:1px solid rgba(255,255,255,0.04);
+}
+
+.card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(168,208,141,0.25);
+}
+
+.card i{
+
+    font-size:1.6rem;
+
+    color:#A8D08D;
+
+    margin-bottom:12px;
+
+    transition:0.3s;
+}
+
+.card:hover i{
+
+    transform:scale(1.15);
+}
+
+.card h3{
+
+    font-size:0.95rem;
+
+    margin-bottom:8px;
+}
+
+.card p{
+
+    font-size:0.72rem;
+
+    color:rgba(255,255,255,0.7);
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   THREE PRINCIPLES
+========================================================= */
+
+.principles{
+
+    background:#4b3f8f;
+
+    padding:65px 20px;
+
+    text-align:center;
+}
+
+.principles h2{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.principles-subtitle{
+
+    font-size:0.85rem;
+
+    color:rgba(255,255,255,0.72);
+
+    margin-bottom:35px;
+}
+
+.principle-container{
+
+    max-width:950px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.principle{
+
+    padding:30px 20px;
+
+    background:#5A4EA1;
+
+    border-radius:15px;
+
+    transition:0.35s ease;
+}
+
+.principle:hover{
+
+    transform:translateY(-6px);
+}
+
+.principle-icon{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 15px;
+
+    border-radius:12px;
+
+    background:rgba(168,208,141,0.12);
+
+    color:#A8D08D;
+
+    font-size:1.2rem;
+}
+
+.principle h3{
+
+    color:#A8D08D;
+
+    font-size:1.1rem;
+
+    margin-bottom:8px;
+}
+
+.principle p{
+
+    font-size:0.75rem;
+
+    color:rgba(255,255,255,0.7);
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section{
+
+    padding:55px 20px;
+
+    text-align:center;
+
+    background:#8E7CC3;
+
+    margin:45px 40px;
+
+    border-radius:15px;
+}
+
+.cta-section h2{
+
+    font-size:1.7rem;
+
+    margin-bottom:10px;
+}
+
+.cta-section p{
+
+    font-size:0.82rem;
+
+    color:rgba(255,255,255,0.8);
+
+    margin-bottom:20px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#3c3273;
+
+    text-align:center;
+
+    padding:20px 10px;
+
+    font-size:0.8rem;
+}
+
+.footer-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.social-icons a{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(168,208,141,0.1);
+
+    color:#A8D08D;
+
+    font-size:0.95rem;
+
+    transition:all 0.3s ease;
+}
+
+.social-icons a:hover{
+
+    background:#A8D08D;
+
+    color:#3c3273;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
 @keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-@keyframes fadeSlide{
-    0%{opacity:0;transform:translateY(20px);}
-    100%{opacity:1;transform:translateY(0);}
-}
-@keyframes buttonPulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.05);}
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
 }
 
-/* Fade on scroll */
-.fadeOnScroll{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all 0.8s ease;
-}
-.fadeOnScroll.visible{
-    opacity:1;
-    transform:translateY(0);
+.hero-content{
+
+    animation:
+        heroAppear 1s ease forwards;
 }
 
-/* Media Queries */
-@media (max-width:768px){
-    .cards{gap:10px;}
-    .card{width:45%;}
-    .cta-section h2{font-size:1.3rem;}
+@keyframes heroAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:900px){
+
+    .hero h1{
+
+        font-size:2.5rem;
+    }
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .about-section{
+
+        text-align:center;
+    }
+
+    .about-image{
+
+        max-width:450px;
+    }
+
+    .about-text{
+
+        max-width:750px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width:480px){
-    .cards{gap:8px;}
-    .card{width:50%;padding:12px;}
-    .cta-section h2{font-size:1.1rem;}
+
+    /* Header */
+
+    header{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        padding:5px 10px;
+
+        gap:3px;
+    }
+
+
+    /* Logo + Name */
+
+    .brand{
+
+        width:auto;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        gap:5px;
+    }
+
+    .brand img{
+
+        width:35px;
+    }
+
+    .brand a.name-link{
+
+        font-size:1rem;
+
+        letter-spacing:1px;
+    }
+
+
+    /* Navigation */
+
+    nav{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+        gap:5px;
+
+        margin-top:2px;
+    }
+
+    nav a{
+
+        font-size:0.75rem;
+
+        padding:4px 6px;
+    }
+
+    .header-icon{
+
+        font-size:0.9rem;
+
+        margin-left:3px;
+    }
+
+
+    /* Hero */
+
+    .hero{
+
+        min-height:65vh;
+
+        padding:55px 18px;
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+    }
+
+    .hero p{
+
+        font-size:0.82rem;
+
+        line-height:1.7;
+    }
+
+
+    /* About */
+
+    .about-section{
+
+        padding:45px 18px;
+
+        gap:30px;
+    }
+
+    .about-text h2{
+
+        font-size:1.7rem;
+    }
+
+    .about-text p{
+
+        font-size:0.8rem;
+    }
+
+    .values{
+
+        flex-direction:column;
+
+        text-align:left;
+    }
+
+
+    /* Services */
+
+    .services-section{
+
+        padding:50px 15px;
+    }
+
+    .services-section h2{
+
+        font-size:1.7rem;
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+    .card{
+
+        min-height:auto;
+
+        padding:20px;
+    }
+
+
+    /* Principles */
+
+    .principles{
+
+        padding:50px 15px;
+    }
+
+    .principles h2{
+
+        font-size:1.7rem;
+    }
+
+    .principle-container{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+
+    /* CTA */
+
+    .cta-section{
+
+        margin:25px 15px;
+
+        padding:35px 18px;
+    }
+
+    .cta-section h2{
+
+        font-size:1.35rem;
+    }
+
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width:350px){
+
+    .brand img{
+
+        width:32px;
+    }
+
+    .brand a.name-link{
+
+        font-size:0.9rem;
+    }
+
+    nav{
+
+        gap:2px;
+    }
+
+    nav a{
+
+        font-size:0.65rem;
+
+        padding:3px 5px;
+    }
+
+    .header-icon{
+
+        font-size:0.75rem;
+    }
+
+    .hero h1{
+
+        font-size:1.75rem;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- Header -->
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header id="mainHeader">
+
+
     <div class="brand">
-        <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Vision Hub Logo">
+
+        <a
+            href="index.html"
+            class="logo-link"
+        >
+
+            <img
+                src="logo.png"
+                alt="Vision Hub Logo"
+            >
+
         </a>
-        <a href="index.html" class="name-link">Vision Hub</a>
+
+
+        <a
+            href="index.html"
+            class="name-link"
+        >
+
+            Vision Hub
+
+        </a>
+
     </div>
+
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+
+        <a
+            href="index.html"
+            class="active"
+        >
+            Home
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
         <i class="fa-solid fa-eye header-icon"></i>
+
     </nav>
+
 </header>
 
-<!-- Hero Section -->
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
-    <h1>Where Vision Meets Growth</h1>
-    <p>Strategic Marketing Solutions That Drive Real Results</p>
-    <a href="contact.html" class="btn">Start Your Growth</a>
+
+    <div class="hero-content">
+
+
+        <span class="hero-label">
+            VISION HUB MARKETING AGENCY
+        </span>
+
+
+        <h1>
+
+            Where Vision Meets
+            <span>Growth.</span>
+
+        </h1>
+
+
+        <p>
+
+            We help businesses build a clear vision,
+            create a strong identity, and make a real
+            impact through strategic and creative marketing.
+
+        </p>
+
+
+        <a
+            href="contact.html"
+            class="btn"
+        >
+
+            Start Your Growth
+
+        </a>
+
+
+    </div>
+
 </section>
 
-<!-- About Section -->
-<section id="about-section" class="about-section fadeOnScroll">
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about-section">
+
+
     <div class="about-image">
-        <img src="team.jpg" alt="Our Team">
+
+        <img
+            src="team.jpg"
+            alt="Vision Hub Team"
+        >
+
     </div>
+
 
     <div class="about-text">
-        <h2>About Us</h2>
+
+
+        <span class="section-label">
+            ABOUT VISION HUB
+        </span>
+
+
+        <h2>
+
+            We Don't Just Market.
+            <span>We Build.</span>
+
+        </h2>
+
+
         <p>
-            We provide innovative marketing strategies that empower businesses
-            to grow, engage their audience, and achieve measurable results.
-            Creativity and strategy combined for success.
+
+            Vision Hub is a creative marketing agency focused
+            on helping businesses turn their ideas into brands
+            that people can recognize, connect with, and remember.
+
         </p>
+
+
+        <p>
+
+            We combine strategy, creativity, and specialized
+            talent to create marketing solutions that are built
+            around each client's goals and audience.
+
+        </p>
+
+
+        <div class="values">
+
+
+            <div class="value">
+
+                <i class="fa-solid fa-eye"></i>
+
+                <h3>
+                    Vision
+                </h3>
+
+                <p>
+                    A clear direction for where your brand wants to go.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <h3>
+                    Identity
+                </h3>
+
+                <p>
+                    A recognizable identity that makes your brand different.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                <h3>
+                    Impact
+                </h3>
+
+                <p>
+                    Marketing that creates meaningful and measurable value.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
     </div>
+
 </section>
 
-<!-- Services Section -->
-<section class="services-section fadeOnScroll">
-    <h2>Our Services</h2>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services-section">
+
+
+    <span class="section-label">
+        WHAT WE DO
+    </span>
+
+
+    <h2>
+        Our Services
+    </h2>
+
+
+    <p class="services-intro">
+
+        From strategy and branding to content and digital
+        marketing, we bring the right skills together to
+        build a complete marketing solution for your brand.
+
+    </p>
+
 
     <div class="cards">
 
-        <div class="card">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Social Media Marketing</h3>
-            <p>Boost your brand visibility across social media platforms.</p>
-        </div>
 
         <div class="card">
-            <i class="fas fa-users"></i>
-            <h3>Social Media Management</h3>
-            <p>Engage your audience with consistent, quality content.</p>
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>
+                Marketing Strategy
+            </h3>
+
+            <p>
+                Clear strategies built around your business,
+                audience, goals, and growth opportunities.
+            </p>
+
         </div>
 
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Paid Ads</h3>
-            <p>Run targeted ads that drive real results and ROI.</p>
-        </div>
 
         <div class="card">
-            <i class="fas fa-palette"></i>
-            <h3>Visual Identity</h3>
-            <p>Create a consistent and professional brand look.</p>
+
+            <i class="fa-solid fa-fingerprint"></i>
+
+            <h3>
+                Branding & Identity
+            </h3>
+
+            <p>
+                Distinctive visual identities that communicate
+                your brand and make it recognizable.
+            </p>
+
         </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-pen-nib"></i>
+
+            <h3>
+                Content Creation
+            </h3>
+
+            <p>
+                Creative content and copy designed to communicate,
+                engage, and connect with your audience.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-hashtag"></i>
+
+            <h3>
+                Social Media
+            </h3>
+
+            <p>
+                Social media management and content that keeps
+                your brand active, consistent, and relevant.
+            </p>
+
+        </div>
+
 
     </div>
+
+
+    <br>
+
+
+    <a
+        href="services.html"
+        class="btn"
+    >
+
+        View All Services
+
+    </a>
+
+
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section fadeOnScroll">
-    <h2>Ready to Grow Your Business?</h2>
-    <a href="contact.html" class="btn">Contact Us Today</a>
+
+
+<!-- =========================================================
+     THREE CORE PRINCIPLES
+========================================================= -->
+
+<section class="principles">
+
+
+    <span class="section-label">
+        OUR FOUNDATION
+    </span>
+
+
+    <h2>
+        What We Believe In
+    </h2>
+
+
+    <p class="principles-subtitle">
+
+        Three principles behind every project we work on.
+
+    </p>
+
+
+    <div class="principle-container">
+
+
+        <!-- Vision -->
+
+        <div class="principle">
+
+            <div class="principle-icon">
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+
+            <h3>
+                Vision
+            </h3>
+
+
+            <p>
+
+                Every successful brand needs a clear direction.
+                We help businesses understand where they are,
+                where they want to go, and how to get there.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Identity -->
+
+        <div class="principle">
+
+            <div class="principle-icon">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+            </div>
+
+
+            <h3>
+                Identity
+            </h3>
+
+
+            <p>
+
+                A brand should be recognizable and memorable.
+                We create identities that reflect the business
+                and communicate what makes it unique.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Impact -->
+
+        <div class="principle">
+
+            <div class="principle-icon">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+            </div>
+
+
+            <h3>
+                Impact
+            </h3>
+
+
+            <p>
+
+                Marketing should create value.
+                We focus on meaningful communication,
+                stronger connections, and measurable results.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<!-- Footer -->
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+
+    <h2>
+        Ready to Build Something Bigger?
+    </h2>
+
+
+    <p>
+
+        Let's turn your vision into a strategy,
+        your identity into a brand, and your ideas
+        into real impact.
+
+    </p>
+
+
+    <a
+        href="contact.html"
+        class="btn"
+    >
+
+        Start With Vision Hub
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
+
+
     <div class="footer-content">
-        <p>© 2026 Vision Hub Marketing Agency</p>
+
+
+        <p>
+            © 2026 Vision Hub Marketing Agency
+        </p>
+
 
         <div class="social-icons">
-            <a href="index.html">
+
+
+            <!-- Facebook -->
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61580311856103"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+
                 <i class="fab fa-facebook-f"></i>
+
             </a>
 
-            <a href="index.html">
+
+
+            <!-- Instagram -->
+
+            <a
+                href="https://www.instagram.com/vision.hub__marketing.agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+
                 <i class="fab fa-instagram"></i>
+
             </a>
 
-            <a href="index.html">
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://www.linkedin.com/company/vision-hub-marketing-agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+
                 <i class="fab fa-linkedin-in"></i>
+
             </a>
 
-            <a href="index.html">
+
+
+            <!-- Linktree -->
+
+            <a
+                href="https://linktr.ee/vision_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linktree"
+            >
+
                 <i class="fas fa-link"></i>
+
             </a>
+
+
         </div>
+
+
     </div>
+
+
 </footer>
 
+
+
+<!-- =========================================================
+     HEADER SCRIPT
+========================================================= -->
+
 <script>
-// Shrink Header عند Scroll + Fade on Scroll
+
 const header = document.getElementById('mainHeader');
 
 window.addEventListener('scroll', () => {
 
     if(window.scrollY > 80){
+
         header.classList.add('shrink');
+
     }
+
     else{
+
         header.classList.remove('shrink');
+
     }
-
-    document.querySelectorAll('.fadeOnScroll').forEach(el => {
-
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if(top < windowHeight - 100){
-            el.classList.add('visible');
-        }
-
-    });
 
 });
+
 </script>
 
+
 </body>
+
 </html>
-```
