@@ -1,127 +1,849 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <title>Vision Hub | About Us</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" href="logo.png" type="image/png" sizes="16x16">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+
 
 <style>
-/* نفس CSS من index.html */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#5A4EA1;color:#fff;animation:fadeIn 1s ease-in-out;line-height:1.6;}
-a{text-decoration:none;}
-header{display:flex;justify-content:space-between;align-items:center;padding:5px 15px;background:#4b3f8f;position:sticky;top:0;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.2);transition:all 0.3s ease;flex-wrap:wrap;}
-header.shrink{padding:3px 10px;}
-.brand{display:flex;align-items:center;gap:5px;}
-.brand img{width:35px;transition:0.3s ease;}
-header.shrink .brand img{width:30px;}
-.brand a.name-link{color:#fff;font-size:1rem;font-weight:700;letter-spacing:1px;transition:0.3s;}
-header.shrink .brand a.name-link{font-size:0.9rem;}
-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px;}
-nav a{color:#fff;font-weight:500;position:relative;padding:4px 8px;border-radius:6px;font-size:0.85rem;transition:all 0.3s ease;}
-nav a::after{content:"";position:absolute;width:0;height:2px;background:#A8D08D;left:0;bottom:-4px;transition:0.3s;}
-nav a:hover{background: rgba(168,208,141,0.15); color:#A8D08D; transform:scale(1.05);}
-nav a:hover::after{width:100%;}
-.header-icon{color:#A8D08D;font-size:1rem;margin-left:5px;transition:all 0.3s ease;}
-.header-icon:hover{color:#fff;transform:scale(1.2) rotate(15deg);}
-section{padding:50px 15px;}
-.about-text h2{font-size:1.8rem;margin-bottom:12px;color:#fff;}
-.about-text p{font-size:0.95rem;opacity:0.9;line-height:1.4;}
-.fadeOnScroll{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
-.fadeOnScroll.visible{opacity:1;transform:translateY(0);}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes fadeSlide{0%{opacity:0; transform:translateY(20px);}100%{opacity:1; transform:translateY(0);} }
-@keyframes buttonPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
 
-/* Eye Game Styles */
-.eye-container {position: fixed; top: 20px; right: 20px; width: 60px; height: 60px; cursor: pointer; z-index: 10000;}
-.eye {width: 100%; height: 100%; background: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 8px rgba(0,0,0,0.4); transition: transform 0.2s, box-shadow 0.2s;}
-.pupil {width: 20px; height: 20px; background: #000; border-radius: 50%; position: relative; transition: all 0.1s;}
-@keyframes blink {0%, 20%, 100% {transform: scaleY(1);} 10% {transform: scaleY(0.1);}}
+/* ==============================
+   GLOBAL
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#5A4EA1;
+    color:#fff;
+    animation:fadeIn 1s ease-in-out;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ==============================
+   HEADER
+================================ */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:5px 15px;
+
+    background:#4b3f8f;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+
+    transition:all 0.3s ease;
+
+    flex-wrap:wrap;
+}
+
+header.shrink{
+    padding:3px 10px;
+}
+
+
+/* Brand */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.brand img{
+    width:35px;
+    transition:0.3s ease;
+}
+
+header.shrink .brand img{
+    width:30px;
+}
+
+.brand a.name-link{
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:0.3s;
+}
+
+header.shrink .brand a.name-link{
+    font-size:0.9rem;
+}
+
+.brand a.name-link:hover{
+    opacity:0.85;
+}
+
+
+/* Navigation */
+
+nav{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:5px;
+}
+
+nav a{
+    color:#fff;
+
+    font-weight:500;
+
+    position:relative;
+
+    padding:4px 8px;
+
+    border-radius:6px;
+
+    font-size:0.85rem;
+
+    transition:all 0.3s ease;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#A8D08D;
+
+    left:0;
+
+    bottom:-4px;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:rgba(168,208,141,0.15);
+
+    color:#A8D08D;
+
+    transform:scale(1.05);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+/* Header Icon */
+
+.header-icon{
+    color:#A8D08D;
+
+    font-size:1rem;
+
+    margin-left:5px;
+
+    transition:all 0.3s ease;
+}
+
+.header-icon:hover{
+    color:#fff;
+
+    transform:scale(1.2) rotate(15deg);
+}
+
+
+/* ==============================
+   ABOUT SECTION
+================================ */
+
+section{
+    padding:50px 15px;
+}
+
+.about-section{
+
+    min-height:calc(100vh - 60px);
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    max-width:1150px;
+
+    margin:auto;
+}
+
+
+/* Image */
+
+.about-image,
+.about-text{
+    flex:1 1 450px;
+
+    margin:10px;
+}
+
+.about-image img{
+
+    width:100%;
+
+    max-width:500px;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+    transition:all 0.4s ease;
+}
+
+.about-image img:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+
+
+/* ==============================
+   ABOUT TEXT
+================================ */
+
+.about-text h2{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+    color:#fff;
+}
+
+.about-text > p{
+
+    font-size:0.95rem;
+
+    opacity:0.9;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+}
+
+
+/* ==============================
+   CORE VALUES
+================================ */
+
+.vision-values{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+
+    margin:22px 0;
+}
+
+
+/* Value Box */
+
+.value-box{
+
+    padding:16px 18px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-left:4px solid #A8D08D;
+
+    border-radius:10px;
+
+    transition:all 0.3s ease;
+}
+
+.value-box:hover{
+
+    background:rgba(168,208,141,0.15);
+
+    transform:translateX(7px);
+}
+
+
+/* Value Title */
+
+.value-box h3{
+
+    color:#A8D08D;
+
+    font-size:1.15rem;
+
+    margin-bottom:5px;
+
+    font-weight:700;
+}
+
+
+/* Value Description */
+
+.value-box p{
+
+    font-size:0.87rem;
+
+    margin:0;
+
+    opacity:0.9;
+
+    line-height:1.6;
+}
+
+
+/* ==============================
+   ENDING STATEMENT
+================================ */
+
+.about-ending{
+
+    margin-top:20px;
+
+    text-align:left;
+
+    font-size:0.95rem;
+
+    line-height:1.7;
+}
+
+.about-ending strong{
+
+    color:#A8D08D;
+
+    font-size:1.15rem;
+
+    letter-spacing:0.5px;
+}
+
+
+/* ==============================
+   SCROLL ANIMATION
+================================ */
+
+.fadeOnScroll{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:all 0.8s ease;
+}
+
+.fadeOnScroll.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* ==============================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeSlide{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+}
+
+
+@keyframes buttonPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+}
+
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width:768px){
+
+    .about-section{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:40px 20px;
+
+        gap:20px;
+    }
+
+
+    .about-image,
+    .about-text{
+
+        flex:1 1 100%;
+
+        margin:10px 0;
+    }
+
+
+    .about-image img{
+
+        max-width:450px;
+    }
+
+
+    .about-text h2{
+
+        font-size:1.7rem;
+    }
+
+
+    .about-text p{
+
+        font-size:0.9rem;
+    }
+
+
+    .about-ending{
+
+        text-align:center;
+    }
+
+
+    .value-box{
+
+        text-align:left;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width:480px){
+
+    header{
+
+        justify-content:center;
+
+        gap:5px;
+    }
+
+
+    .brand{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+
+    nav{
+
+        justify-content:center;
+
+        width:100%;
+    }
+
+
+    .about-section{
+
+        padding:30px 15px;
+    }
+
+
+    .about-text h2{
+
+        font-size:1.5rem;
+    }
+
+
+    .about-text > p{
+
+        font-size:0.85rem;
+    }
+
+
+    .value-box{
+
+        padding:14px;
+    }
+
+
+    .value-box h3{
+
+        font-size:1rem;
+    }
+
+
+    .value-box p{
+
+        font-size:0.82rem;
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
 
+
+<!-- ==============================
+     HEADER
+================================ -->
+
 <header id="mainHeader">
+
     <div class="brand">
+
         <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Vision Hub Logo">
+
+            <img
+                src="logo.png"
+                alt="Vision Hub Logo"
+            >
+
         </a>
-        <a href="index.html" class="name-link">Vision Hub</a>
+
+
+        <a
+            href="index.html"
+            class="name-link"
+        >
+
+            Vision Hub
+
+        </a>
+
     </div>
+
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
         <i class="fa-solid fa-eye header-icon"></i>
+
     </nav>
+
 </header>
 
-<section class="about-section fadeOnScroll">
+
+
+<!-- ==============================
+     ABOUT SECTION
+================================ -->
+
+<section class="about-section fadeOnScroll visible">
+
+
+    <!-- Image -->
+
     <div class="about-image">
-        <img src="team.jpg" alt="Our Team">
+
+        <img
+            src="team.jpg"
+            alt="Vision Hub Team"
+        >
+
     </div>
+
+
+
+    <!-- Content -->
+
     <div class="about-text">
-        <h2>About Us</h2>
-        <p>Vision Hub is a creative marketing agency that combines strategy and creativity to help brands grow. We focus on innovative campaigns, visual identity, and measurable results to empower businesses in a competitive digital world.</p>
+
+
+        <h2>
+            About Vision Hub
+        </h2>
+
+
+        <p>
+
+            Vision Hub is a creative marketing agency built to help
+            businesses and brands move from simply being seen to
+            being recognized, remembered, and making an impact.
+
+        </p>
+
+
+        <p>
+
+            We believe that successful marketing is more than
+            advertising, posting content, or chasing numbers.
+            It starts with understanding the business, building
+            a strong foundation, and creating a clear direction
+            for sustainable growth.
+
+        </p>
+
+
+        <p>
+
+            Everything we do at Vision Hub is built around
+            three core principles:
+
+        </p>
+
+
+
+        <!-- Core Principles -->
+
+        <div class="vision-values">
+
+
+            <!-- Vision -->
+
+            <div class="value-box">
+
+                <h3>
+                    01. Vision
+                </h3>
+
+                <p>
+
+                    We help businesses define where they are,
+                    where they want to go, and how they can
+                    build a clear direction for meaningful growth.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Identity -->
+
+            <div class="value-box">
+
+                <h3>
+                    02. Identity
+                </h3>
+
+                <p>
+
+                    We create distinctive identities that
+                    communicate who a brand is, what it stands
+                    for, and what makes it different from the
+                    competition.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Impact -->
+
+            <div class="value-box">
+
+                <h3>
+                    03. Impact
+                </h3>
+
+                <p>
+
+                    We turn strategy, creativity, and marketing
+                    into meaningful results that create real
+                    value for both the business and its audience.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Closing -->
+
+        <p class="about-ending">
+
+            <strong>
+                Vision. Identity. Impact.
+            </strong>
+
+            <br>
+
+            These are not just words we believe in.
+            They are the foundation behind every brand,
+            strategy, and project we build.
+
+        </p>
+
+
     </div>
+
 </section>
 
-<!-- Eye Game -->
-<div class="eye-container">
-    <div class="eye">
-        <div class="pupil"></div>
-    </div>
-</div>
+
+
+<!-- ==============================
+     JAVASCRIPT
+================================ -->
 
 <script>
-// Shrink Header + Fade on Scroll
+
+/* Shrink Header + Scroll Animation */
+
 const header = document.getElementById('mainHeader');
+
+
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 80){header.classList.add('shrink');}
-    else{header.classList.remove('shrink');}
-    document.querySelectorAll('.fadeOnScroll').forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 100){el.classList.add('visible');}
-    });
+
+
+    /* Shrink Header */
+
+    if(window.scrollY > 80){
+
+        header.classList.add('shrink');
+
+    }
+
+    else{
+
+        header.classList.remove('shrink');
+
+    }
+
+
+
+    /* Fade On Scroll */
+
+    document
+        .querySelectorAll('.fadeOnScroll')
+        .forEach(el => {
+
+
+            const top =
+                el.getBoundingClientRect().top;
+
+
+            const windowHeight =
+                window.innerHeight;
+
+
+            if(top < windowHeight - 100){
+
+                el.classList.add('visible');
+
+            }
+
+        });
+
 });
 
-// Eye Game
-const eyeContainer = document.querySelector('.eye-container');
-const pupil = document.querySelector('.pupil');
-const eye = document.querySelector('.eye');
-
-document.addEventListener('mousemove', e => {
-    const rect = eye.getBoundingClientRect();
-    const eyeX = rect.left + rect.width/2;
-    const eyeY = rect.top + rect.height/2;
-    const dx = e.clientX - eyeX;
-    const dy = e.clientY - eyeY;
-    const angle = Math.atan2(dy, dx);
-    const distance = Math.min(Math.sqrt(dx*dx + dy*dy)/5, 10);
-    pupil.style.transform = `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`;
-});
-
-setInterval(() => {
-    eye.style.animation = 'blink 0.2s';
-    setTimeout(()=> eye.style.animation = '', 200);
-}, Math.random() * 3000 + 3000);
-
-eyeContainer.addEventListener('click', () => {
-    eye.style.transform = 'scale(1.2) rotate(20deg)';
-    eye.style.boxShadow = '0 0 15px #A8D08D, 0 0 30px #fff';
-    setTimeout(() => {
-        eye.style.transform = 'scale(1) rotate(0deg)';
-        eye.style.boxShadow = '0 0 8px rgba(0,0,0,0.4)';
-    }, 400);
-    document.querySelector('.about-section').scrollIntoView({behavior:'smooth'});
-});
 </script>
+
+
 </body>
 </html>
